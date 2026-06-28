@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - FAMEZEL | For Freedom</title>
+    <meta name="description" content="Discover Famezel's comprehensive services: Brand Identity, Strategy, Digital Experiences, Performance Marketing, and more. Services built on strategy, designed for freedom.">
+    <meta name="keywords" content="FAMEZEL services, brand identity, digital experiences, brand strategy, creative services, design agency services, Ahmedabad">
+    <meta name="author" content="FAMEZEL">
+    <meta property="og:title" content="Services - FAMEZEL | For Freedom">
+    <meta property="og:description" content="Discover Famezel's comprehensive services: Brand Identity, Strategy, Digital Experiences, Performance Marketing, and more. Services built on strategy, designed for freedom.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://famezel.com/Services.html">
+    <meta property="og:image" content="https://famezel.com/assets/og-image-services.jpg">
+    <link rel="canonical" href="https://famezel.com/Services.html">
+    
+    <!-- Unified CSS System -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    
+    <!-- Component System -->
+    <script src="components.js" defer></script>
+
+    <style>
+        /* =========================================
+           SERVICES PAGE SPECIFIC STYLES
+           ========================================= */
+
+        /* HERO */
+        .scene-hero { 
+            min-height: 90vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            padding: 10rem 2rem; 
+            position: relative; 
+            z-index: 2;
+        }
+
+        .intro-lead { 
+            font-size: clamp(1.2rem, 2vw, 1.6rem); 
+            font-style: italic; 
+            margin-bottom: 2rem; 
+            opacity: 0.8; 
+        }
+
+        .intro-body { 
+            font-size: 1.1rem; 
+            line-height: 1.6; 
+            max-width: 600px; 
+            opacity: 0.7; 
+            margin-bottom: 2rem; 
+        }
+
+        /* STICKY INTRO SECTION */
+        .scene-sticky-intro {
+            padding: 10rem 5vw; 
+            max-width: var(--site-width); 
+            margin: 0 auto;
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 80px; 
+            align-items: start;
+        }
+
+        .sticky-col { 
+            position: sticky; 
+            top: 20vh; 
+        }
+
+        .sticky-headline { 
+            font-family: var(--f-header); 
+            font-size: clamp(2.5rem, 5vw, 4.5rem); 
+            line-height: 1.1; 
+            opacity: 0.8; 
+        }
+
+        .sticky-headline span { 
+            background: var(--ig-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-style: italic; 
+        }
+
+        /* THE LIVE CATALOG */
+        .scene-catalog {
+            display: grid; 
+            grid-template-columns: 1fr 1.2fr;
+            max-width: var(--site-width); 
+            margin: 0 auto;
+            padding: 5rem 2rem 15rem 2rem; 
+            position: relative; 
+            z-index: 2;
+            gap: 6rem;
+        }
+
+        /* LEFT: The Navigation List */
+        .catalog-nav { 
+            padding-right: 2rem; 
+        }
+
+        .nav-item {
+            padding: 3.5rem 0; 
+            border-top: 1px solid rgba(255,255,255,0.1);
+            cursor: pointer; 
+            transition: all 0.4s ease;
+            display: flex; 
+            flex-direction: column; 
+            opacity: 0.3; 
+            position: relative;
+        }
+
+        .nav-item:last-child { 
+            border-bottom: 1px solid rgba(255,255,255,0.1); 
+        }
+
+        .nav-item:hover, 
+        .nav-item.active { 
+            opacity: 1; 
+            padding-left: 20px; 
+            border-top-color: #fff; 
+        }
+        
+        .nav-header { 
+            display: flex; 
+            align-items: baseline; 
+            pointer-events: none; 
+        }
+
+        .nav-num { 
+            font-family: var(--f-tech); 
+            font-size: 0.8rem; 
+            margin-right: 2rem; 
+        }
+
+        .nav-title { 
+            font-family: var(--f-header); 
+            font-size: 3rem; 
+            line-height: 1; 
+            margin: 0; 
+            color: #fff; 
+            transition: 0.3s; 
+        }
+
+        .nav-item:hover .nav-title { 
+            font-style: italic; 
+            background: var(--ig-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-tagline { 
+            font-family: var(--f-body); 
+            font-size: 0.9rem; 
+            opacity: 0.6; 
+            margin-top: 0.5rem; 
+            margin-left: 3rem; 
+            pointer-events: none;
+            display: none; /* Mobile fallback */
+        }
+
+        /* RIGHT: The Content Display */
+        .catalog-display {
+            position: sticky; 
+            top: 10vh; 
+            height: 80vh;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: #0f0f0f; 
+            overflow: hidden;
+            display: flex; 
+            flex-direction: column; 
+            justify-content: flex-end;
+            box-shadow: 0 0 50px rgba(255,255,255,0.03);
+        }
+        
+        .display-bg {
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%;
+            object-fit: cover; 
+            opacity: 0; 
+            transform: scale(1.1);
+            filter: grayscale(1);
+            transition: opacity 0.6s ease, transform 1.2s ease, filter 0.6s ease; 
+            z-index: 0;
+        }
+
+        .display-bg.active { 
+            opacity: 0.7; 
+            transform: scale(1); 
+            filter: grayscale(0.2); 
+        }
+        
+        .display-content {
+            position: relative; 
+            z-index: 2; 
+            padding: 4rem;
+            background: linear-gradient(to top, #000 20%, transparent);
+            transform: translateY(20px); 
+            opacity: 0; 
+            transition: all 0.5s ease;
+        }
+
+        .display-content.active { 
+            transform: translateY(0); 
+            opacity: 1; 
+        }
+        
+        .display-title { 
+            font-family: var(--f-header); 
+            font-size: 4rem; 
+            line-height: 1; 
+            margin-bottom: 1rem; 
+            color: #fff; 
+        }
+
+        .display-desc { 
+            font-size: 1.1rem; 
+            line-height: 1.6; 
+            opacity: 0.8; 
+            margin-bottom: 2rem; 
+            max-width: 500px; 
+            color: #ccc; 
+        }
+        
+        .display-outcome { 
+            font-family: var(--f-tech); 
+            font-size: 0.75rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.1em;
+            color: #fff; 
+            margin-bottom: 1.5rem; 
+            display: block; 
+            border-left: 1px solid #fff; 
+            padding-left: 1rem; 
+            opacity: 0.8;
+        }
+
+        .cap-list { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 0.8rem; 
+        }
+
+        .cap-pill {
+            font-family: var(--f-tech); 
+            font-size: 0.7rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.05em;
+            padding: 0.7rem 1.4rem; 
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff; 
+            background: rgba(255,255,255,0.02); 
+            backdrop-filter: blur(5px);
+            border-radius: 50px; 
+            transition: all 0.3s;
+        }
+
+        .cap-pill:hover { 
+            background: var(--ig-gradient);
+            color: #000; 
+            border-color: transparent; 
+        }
+
+        /* PROCESS SECTION */
+        .process-section {
+            padding: 120px 2rem; 
+            border-top: 1px solid rgba(255,255,255,0.1);
+            background: linear-gradient(to bottom, #050505, #0a0a0a);
+        }
+
+        .process-container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            text-align: center; 
+        }
+
+        .process-headline { 
+            font-family: var(--f-header); 
+            font-size: clamp(3rem, 6vw, 5rem); 
+            line-height: 1; 
+            margin-bottom: 2rem; 
+            color: #fff;
+        }
+
+        .process-copy { 
+            max-width: 700px; 
+            margin: 0 auto 5rem; 
+            font-size: 1.2rem; 
+            opacity: 0.7; 
+        }
+        
+        .process-steps { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 4rem; 
+            margin-bottom: 5rem; 
+        }
+
+        .process-step-num { 
+            font-size: 4rem; 
+            font-weight: 700; 
+            color: #fff; 
+            opacity: 0.1; 
+            line-height: 1; 
+            font-family: var(--f-header); 
+        }
+
+        .process-step-title { 
+            font-size: 2rem; 
+            margin: 1rem 0; 
+            font-weight: 500; 
+        }
+
+        .process-step-desc { 
+            font-size: 1rem; 
+            opacity: 0.6; 
+            line-height: 1.6; 
+        }
+
+        /* AUDIENCE SECTION */
+        .audience-section { 
+            padding: 120px 2rem; 
+        }
+
+        .audience-container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 4rem; 
+            align-items: center; 
+        }
+
+        .audience-headline { 
+            font-family: var(--f-header); 
+            font-size: clamp(2.5rem, 5vw, 4rem); 
+            line-height: 1.1; 
+            margin-bottom: 2rem; 
+        }
+
+        .audience-list { 
+            list-style: none; 
+        }
+
+        .audience-item { 
+            font-size: 1.2rem; 
+            margin-bottom: 1.5rem; 
+            padding-left: 2rem; 
+            position: relative; 
+            opacity: 0; 
+            transform: translateX(20px); 
+            transition: all 0.5s ease;
+        }
+
+        .audience-item.in-view { 
+            opacity: 1; 
+            transform: translateX(0); 
+        }
+
+        .audience-item::before { 
+            content: '→'; 
+            position: absolute; 
+            left: 0; 
+            color: #fff; 
+            opacity: 0.5; 
+        }
+
+        /* CTA SECTION */
+        .scene-cta { 
+            padding: 10rem 2rem; 
+            text-align: center; 
+            background: #080808; 
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .final-callout { 
+            padding: 6rem 2rem; 
+            display: flex; 
+            justify-content: center; 
+            gap: 2rem; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            opacity: 0; 
+            transform: translateY(30px);
+        }
+
+        .final-callout.in-view { 
+            opacity: 1; 
+            transform: translateY(0); 
+            transition: 1s ease; 
+        }
+
+        .white-line { 
+            width: 1px; 
+            height: 100px; 
+            background: #fff; 
+            opacity: 0.3; 
+        }
+
+        /* =========================================
+           COMPREHENSIVE RESPONSIVE DESIGN
+           ========================================= */
+
+        /* Small Mobile Devices (320px - 480px) */
+        @media (max-width: 480px) {
+            .scene-hero {
+                min-height: 80vh;
+                padding: 4rem 1rem;
+            }
+            
+            .scene-catalog, 
+            .scene-sticky-intro, 
+            .process-steps, 
+            .audience-container { 
+                grid-template-columns: 1fr; 
+                gap: 2.5rem; 
+                padding: 4rem 1rem;
+            }
+
+            .catalog-display { 
+                display: none; 
+            } 
+            
+            .nav-item { 
+                flex-direction: column; 
+                opacity: 1; 
+                padding: 2rem 1.5rem; 
+                pointer-events: none; 
+                background: #111; 
+                margin-bottom: 1.5rem;
+                border: 1px solid rgba(255,255,255,0.1); 
+                border-top: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .nav-item:last-child { 
+                border-bottom: 1px solid rgba(255,255,255,0.1); 
+            }
+
+            .nav-item:hover { 
+                padding-left: 1.5rem; 
+            }
+
+            .nav-tagline { 
+                display: block; 
+                margin-left: 0; 
+                margin-top: 0.4rem; 
+                opacity: 0.7; 
+                font-size: 0.85rem;
+            }
+            
+            .mobile-list { 
+                display: block !important; 
+                margin-top: 0.8rem; 
+                border-top: 1px solid rgba(255,255,255,0.1); 
+                padding-top: 0.8rem; 
+            }
+
+            .mobile-list span { 
+                display: inline-block; 
+                font-family: var(--f-tech); 
+                font-size: 0.6rem; 
+                margin: 0 8px 4px 0; 
+                opacity: 0.8; 
+                border: 1px solid rgba(255,255,255,0.2); 
+                padding: 6px 10px; 
+                border-radius: 15px;
+            }
+            
+            .process-step {
+                padding: 2rem 1.5rem;
+            }
+            
+            .step-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1rem;
+            }
+            
+            .step-title {
+                font-size: 1.2rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .step-description {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+        }
+
+        /* Standard Mobile (481px - 768px) */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .scene-hero {
+                min-height: 85vh;
+                padding: 5rem 1.5rem;
+            }
+            
+            .scene-catalog, 
+            .scene-sticky-intro, 
+            .process-steps, 
+            .audience-container { 
+                grid-template-columns: 1fr; 
+                gap: 3rem; 
+                padding: 6rem 1.5rem;
+            }
+
+            .catalog-display { 
+                display: none; 
+            } 
+            
+            .nav-item { 
+                flex-direction: column; 
+                opacity: 1; 
+                padding: 2.5rem 2rem; 
+                pointer-events: none; 
+                background: #111; 
+                margin-bottom: 2rem;
+                border: 1px solid rgba(255,255,255,0.1); 
+                border-top: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .nav-item:last-child { 
+                border-bottom: 1px solid rgba(255,255,255,0.1); 
+            }
+
+            .nav-item:hover { 
+                padding-left: 2rem; 
+            }
+
+            .nav-tagline { 
+                display: block; 
+                margin-left: 0; 
+                margin-top: 0.5rem; 
+                opacity: 0.7; 
+                font-size: 0.9rem;
+            }
+            
+            .mobile-list { 
+                display: block !important; 
+                margin-top: 1rem; 
+                border-top: 1px solid rgba(255,255,255,0.1); 
+                padding-top: 1rem; 
+            }
+
+            .mobile-list span { 
+                display: inline-block; 
+                font-family: var(--f-tech); 
+                font-size: 0.65rem; 
+                margin: 0 9px 5px 0; 
+                opacity: 0.8; 
+                border: 1px solid rgba(255,255,255,0.2); 
+                padding: 7px 11px; 
+                border-radius: 18px;
+            }
+            
+            .process-step {
+                padding: 2.5rem 2rem;
+            }
+            
+            .step-number {
+                width: 55px;
+                height: 55px;
+                font-size: 1.1rem;
+            }
+            
+            .step-title {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+            
+            .step-description {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+        }
+
+        /* Tablets Portrait (769px - 1024px) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .scene-hero {
+                min-height: 90vh;
+                padding: 6rem 2rem;
+            }
+            
+            .scene-catalog, 
+            .scene-sticky-intro, 
+            .process-steps, 
+            .audience-container { 
+                grid-template-columns: 1fr; 
+                gap: 3.5rem; 
+                padding: 7rem 2rem;
+            }
+
+            .catalog-display { 
+                display: none; 
+            } 
+            
+            .nav-item { 
+                flex-direction: column; 
+                opacity: 1; 
+                padding: 3rem 2.5rem; 
+                pointer-events: none; 
+                background: #111; 
+                margin-bottom: 2rem;
+                border: 1px solid rgba(255,255,255,0.1); 
+                border-top: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .nav-item:last-child { 
+                border-bottom: 1px solid rgba(255,255,255,0.1); 
+            }
+
+            .nav-item:hover { 
+                padding-left: 2.5rem; 
+            }
+
+            .nav-tagline { 
+                display: block; 
+                margin-left: 0; 
+                margin-top: 0.6rem; 
+                opacity: 0.7; 
+                font-size: 1rem;
+            }
+            
+            .mobile-list { 
+                display: block !important; 
+                margin-top: 1.2rem; 
+                border-top: 1px solid rgba(255,255,255,0.1); 
+                padding-top: 1.2rem; 
+            }
+
+            .mobile-list span { 
+                display: inline-block; 
+                font-family: var(--f-tech); 
+                font-size: 0.7rem; 
+                margin: 0 10px 6px 0; 
+                opacity: 0.8; 
+                border: 1px solid rgba(255,255,255,0.2); 
+                padding: 8px 12px; 
+                border-radius: 20px;
+            }
+            
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .process-step {
+                padding: 2.8rem 2.5rem;
+            }
+            
+            .step-number {
+                width: 58px;
+                height: 58px;
+                font-size: 1.15rem;
+            }
+            
+            .step-title {
+                font-size: 1.4rem;
+            }
+            
+            .step-description {
+                font-size: 1.05rem;
+            }
+        }
+
+        /* Tablets Landscape & Small Laptops (1025px - 1440px) */
+        @media (min-width: 1025px) and (max-width: 1440px) {
+            .scene-hero {
+                min-height: 95vh;
+                padding: 7rem 3rem;
+            }
+            
+            .scene-catalog {
+                grid-template-columns: 1fr 1.2fr;
+                gap: 4rem;
+                padding: 8rem 3rem;
+            }
+            
+            .scene-sticky-intro, 
+            .audience-container { 
+                grid-template-columns: 1fr; 
+                gap: 4rem; 
+                padding: 8rem 3rem;
+            }
+            
+            .process-steps {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 3rem;
+                padding: 8rem 3rem;
+            }
+
+            .catalog-display { 
+                display: block; 
+            } 
+            
+            .nav-item { 
+                padding: 2.5rem 0;
+                margin-bottom: 0;
+            }
+
+            .nav-item:hover { 
+                padding-left: 2rem; 
+            }
+
+            .nav-tagline { 
+                display: none; 
+            }
+            
+            .mobile-list { 
+                display: none !important; 
+            }
+            
+            .process-step {
+                padding: 3rem 2.5rem;
+            }
+            
+            .step-number {
+                width: 60px;
+                height: 60px;
+                font-size: 1.2rem;
+            }
+            
+            .step-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Large Desktops & Wide Screens (1441px+) */
+        @media (min-width: 1441px) {
+            .scene-hero {
+                min-height: 100vh;
+                padding: 8rem 4rem;
+            }
+            
+            .scene-catalog {
+                grid-template-columns: 1fr 1.2fr;
+                gap: 4rem;
+                padding: 8rem 4rem;
+            }
+            
+            .scene-sticky-intro, 
+            .audience-container { 
+                grid-template-columns: 1fr; 
+                gap: 4rem; 
+                padding: 8rem 4rem;
+            }
+            
+            .process-steps {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 3rem;
+                padding: 8rem 4rem;
+            }
+
+            .catalog-display { 
+                display: block; 
+            } 
+            
+            .nav-item { 
+                padding: 2.5rem 0;
+                margin-bottom: 0;
+            }
+
+            .nav-item:hover { 
+                padding-left: 2rem; 
+            }
+
+            .nav-tagline { 
+                display: none; 
+            }
+            
+            .mobile-list { 
+                display: none !important; 
+            }
+            
+            .process-step {
+                padding: 3rem;
+            }
+            
+            .step-number {
+                width: 60px;
+                height: 60px;
+                font-size: 1.2rem;
+            }
+            
+            .step-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Legacy Support - MOBILE RESPONSIVE */
+        @media (max-width: 1024px) {
+            .scene-catalog, 
+            .scene-sticky-intro, 
+            .process-steps, 
+            .audience-container { 
+                grid-template-columns: 1fr; 
+                gap: 4rem; 
+            }
+
+            .catalog-display { 
+                display: none; 
+            } 
+            
+            /* Mobile Cards */
+            .nav-item { 
+                flex-direction: column; 
+                opacity: 1; 
+                padding: 3rem 2rem; 
+                pointer-events: none; 
+                background: #111; 
+                margin-bottom: 2rem;
+                border: 1px solid rgba(255,255,255,0.1); 
+                border-top: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .nav-item:last-child { 
+                border-bottom: 1px solid rgba(255,255,255,0.1); 
+            }
+
+            .nav-item:hover { 
+                padding-left: 2rem; 
+            }
+
+            .nav-tagline { 
+                display: block; 
+                margin-left: 0; 
+                margin-top: 0.5rem; 
+                opacity: 0.7; 
+            }
+            
+            .mobile-list { 
+                display: block !important; 
+                margin-top: 1rem; 
+                border-top: 1px solid rgba(255,255,255,0.1); 
+                padding-top: 1rem; 
+            }
+
+            .mobile-list span { 
+                display: inline-block; 
+                font-family: var(--f-tech); 
+                font-size: 0.7rem; 
+                margin: 0 10px 5px 0; 
+                opacity: 0.8; 
+                border: 1px solid rgba(255,255,255,0.2); 
+                padding: 8px 12px; 
+                border-radius: 20px;
+            }
+        }
+        
+        .mobile-list { 
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="scroll-progress"></div>
+    <div class="grain"></div>
+    <canvas id="dust-canvas"></canvas>
+
+    <main>
+
+        <section class="scene-hero">
+            <div class="chapter-marker">The Work</div>
+            <h1 class="h-hero parallax-text">
+                <div class="line-mask"><span class="line-mask-inner">Services Built on</span></div><br>
+                <div class="line-mask"><span class="line-mask-inner">Strategy. Designed</span></div><br>
+                <div class="line-mask"><span class="line-mask-inner">for Freedom.</span></div>
+            </h1>
+            
+            <div class="intro-lead fade-up">Visibility without meaning fades.<br>Growth without direction collapses.</div>
+            
+            <div class="intro-body fade-up">
+                At Famezel For Freedom, we don't offer services as isolated tasks. 
+                We create systems of alignment—where strategy, design, and growth move as one.
+            </div>
+            
+            <div class="fade-up">
+                <a href="#catalog" class="btn-outline">Explore Our Services</a>
+            </div>
+        </section>
+
+        <section class="scene-sticky-intro">
+            <div class="sticky-col">
+                <h2 class="sticky-headline">
+                    Not everything needs more.<br>
+                    Some things need <span>clarity.</span>
+                </h2>
+            </div>
+            <div style="padding-top: 2rem; opacity: 0.7; line-height: 1.6;">
+                <p>Each service exists to remove friction between who you are and how the world experiences you. Choose what aligns. Ignore what doesn't.</p>
+            </div>
+        </section>
+
+        <section class="scene-catalog" id="catalog">
+            
+            <div class="catalog-nav">
+                
+                <div class="nav-item active" onmouseenter="updateDisplay('brand')">
+                    <div class="nav-header">
+                        <span class="nav-num">01</span>
+                        <h2 class="nav-title">Brand Identity</h2>
+                    </div>
+                    <span class="nav-tagline">Revealing what already exists</span>
+                    <div class="mobile-list"><span>Positioning</span><span>Visual Identity</span><span>Voice</span></div>
+                </div>
+
+                <div class="nav-item" onmouseenter="updateDisplay('strategy')">
+                    <div class="nav-header">
+                        <span class="nav-num">02</span>
+                        <h2 class="nav-title">Strategy & Positioning</h2>
+                    </div>
+                    <span class="nav-tagline">Direction before movement</span>
+                    <div class="mobile-list"><span>Market Positioning</span><span>Audience</span><span>Roadmaps</span></div>
+                </div>
+
+                <div class="nav-item" onmouseenter="updateDisplay('digital')">
+                    <div class="nav-header">
+                        <span class="nav-num">03</span>
+                        <h2 class="nav-title">Digital Experiences</h2>
+                    </div>
+                    <span class="nav-tagline">Spaces where meaning is felt</span>
+                    <div class="mobile-list"><span>Website Design</span><span>UI/UX Systems</span><span>Motion</span></div>
+                </div>
+
+                <div class="nav-item" onmouseenter="updateDisplay('growth')">
+                    <div class="nav-header">
+                        <span class="nav-num">04</span>
+                        <h2 class="nav-title">Performance & Growth</h2>
+                    </div>
+                    <span class="nav-tagline">Growth without distortion</span>
+                    <div class="mobile-list"><span>Growth Strategy</span><span>Paid Media</span><span>Optimization</span></div>
+                </div>
+
+                <div class="nav-item" onmouseenter="updateDisplay('campaign')">
+                    <div class="nav-header">
+                        <span class="nav-num">05</span>
+                        <h2 class="nav-title">Campaigns & Storytelling</h2>
+                    </div>
+                    <span class="nav-tagline">Turning clarity into motion</span>
+                    <div class="mobile-list"><span>Concepts</span><span>Creative Direction</span><span>Launch</span></div>
+                </div>
+
+                <div class="nav-item" onmouseenter="updateDisplay('logo')">
+                    <div class="nav-header">
+                        <span class="nav-num">06</span>
+                        <h2 class="nav-title">Logo Design</h2>
+                    </div>
+                    <span class="nav-tagline">Symbols that speak without words</span>
+                    <div class="mobile-list"><span>3D Logo</span><span>Minimal</span><span>Emblem</span></div>
+                </div>
+
+                <div class="nav-item" onmouseenter="updateDisplay('web')">
+                    <div class="nav-header">
+                        <span class="nav-num">07</span>
+                        <h2 class="nav-title">Web Development</h2>
+                    </div>
+                    <span class="nav-tagline">Built for performance</span>
+                    <div class="mobile-list"><span>Custom</span><span>WordPress</span><span>Shopify</span></div>
+                </div>
+
+                 <div class="nav-item" onmouseenter="updateDisplay('app')">
+                    <div class="nav-header">
+                        <span class="nav-num">08</span>
+                        <h2 class="nav-title">App Development</h2>
+                    </div>
+                    <span class="nav-tagline">Designed for real users</span>
+                    <div class="mobile-list"><span>iOS</span><span>Android</span><span>React Native</span></div>
+                </div>
+
+            </div>
+
+            <div class="catalog-display">
+                
+                <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=2564&auto=format&fit=crop" class="display-bg active" id="img-brand">
+                <img src="https://images.unsplash.com/photo-1507208773393-40d9fc670acf?q=80&w=2574&auto=format&fit=crop" class="display-bg" id="img-strategy">
+                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=2574&auto=format&fit=crop" class="display-bg" id="img-digital">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" class="display-bg" id="img-growth">
+                <img src="https://images.unsplash.com/photo-1618331835717-801e976710b2?q=80&w=2535&auto=format&fit=crop" class="display-bg" id="img-campaign">
+                <img src="https://images.unsplash.com/photo-1626785774573-4b799314346d?q=80&w=2670&auto=format&fit=crop" class="display-bg" id="img-logo">
+                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2670&auto=format&fit=crop" class="display-bg" id="img-web">
+                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=2532&auto=format&fit=crop" class="display-bg" id="img-app">
+
+                <div class="display-content active" id="display-txt">
+                    <span class="display-outcome" id="d-outcome">Outcome: Recognition rooted in truth.</span>
+                    <h2 class="display-title" id="d-title">Brand Identity</h2>
+                    <p class="display-desc" id="d-desc">Every brand has an essence—often buried under noise. We uncover that core and give it form.</p>
+                    <div class="cap-list" id="d-caps">
+                        </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="process-section reveal">
+            <div class="process-container">
+                <h2 class="process-headline">Reveal. Align. Transmit.</h2>
+                <p class="process-copy">Nothing is rushed. Nothing is forced. Everything serves alignment.</p>
+                
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="process-step-num">01</div>
+                        <h3 class="process-step-title">Reveal</h3>
+                        <p class="process-step-desc">We uncover the truth of your brand—the core essence beneath surface-level assumptions.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-step-num">02</div>
+                        <h3 class="process-step-title">Align</h3>
+                        <p class="process-step-desc">We structure strategy, design, and systems around that truth.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-step-num">03</div>
+                        <h3 class="process-step-title">Transmit</h3>
+                        <p class="process-step-desc">We help clarity travel through experiences, campaigns, and growth systems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="audience-section reveal">
+            <div class="audience-container">
+                <div>
+                    <h2 class="audience-headline">For those who value<br>depth over noise.</h2>
+                    <p style="opacity:0.7; line-height:1.6;">Our services are for founders, teams, and organizations who understand that freedom requires structure.</p>
+                </div>
+                <ul class="audience-list">
+                    <li class="audience-item">Seek clarity, not shortcuts</li>
+                    <li class="audience-item">Value longevity over trends</li>
+                    <li class="audience-item">Believe alignment creates momentum</li>
+                    <li class="audience-item">Know signals travel farther than shouts</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="scene-cta">
+            <h2 class="h-hero split-lines" style="color: #fff;">Begin where<br>alignment starts.</h2>
+            <p class="p-lead" style="color: #ccc; margin-top: 2rem;">When clarity appears, growth follows.</p>
+            <a href="contact.html" class="btn-outline" style="margin-top: 3rem;">Begin the Alignment</a>
+        </section>
+
+        <div class="final-callout">
+            <div class="white-line"></div>
+            <div>
+                <h3 style="font-size: 2rem; margin-bottom: 1rem;">Choose what aligns.</h3>
+                <p style="opacity: 0.7;">Momentum is found in focus, not volume. We work only on what moves the signal forward.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Common JavaScript -->
+    <script src="common.js"></script>
+
+    <!-- Page-specific JavaScript -->
+    <script>
+        // Services Page Specific Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Service Data
+            const serviceData = {
+                brand: {
+                    title: "Brand Identity",
+                    desc: "Every brand has an essence—often buried under noise. We uncover that core and give it form through identity, language, and visual clarity.",
+                    outcome: "Outcome: Recognition rooted in truth.",
+                    caps: ["Brand Positioning", "Visual Identity", "Voice & Narrative", "Foundational Guidelines"]
+                },
+                strategy: {
+                    title: "Strategy & Positioning",
+                    desc: "Without alignment, effort becomes noise. We define where you stand, why you exist, and how you move forward.",
+                    outcome: "Outcome: Confidence in every move.",
+                    caps: ["Market Positioning", "Audience Alignment", "Messaging Frameworks", "Strategic Roadmaps"]
+                },
+                digital: {
+                    title: "Digital Experiences",
+                    desc: "A website is not a brochure. It's an environment. We design digital experiences that feel intentional, immersive, and human.",
+                    outcome: "Outcome: Experiences that resonate, not overwhelm.",
+                    caps: ["Website Design", "UI / UX Systems", "Interaction & Motion", "Performance Layouts"]
+                },
+                growth: {
+                    title: "Performance & Growth",
+                    desc: "Growth should not cost you your identity. We build systems that amplify what's already aligned—not campaigns that force results.",
+                    outcome: "Outcome: Sustainable, measurable momentum.",
+                    caps: ["Growth Strategy", "Paid Media Systems", "Conversion Optimization", "Analytics & Insight"]
+                },
+                campaign: {
+                    title: "Campaigns & Storytelling",
+                    desc: "When alignment is clear, stories move naturally. We craft campaigns that feel inevitable, allowing your message to travel with precision.",
+                    outcome: "Outcome: Signals that spread without shouting.",
+                    caps: ["Campaign Concepts", "Creative Direction", "Content Systems", "Launch Strategy"]
+                },
+                logo: {
+                    title: "Logo Design",
+                    desc: "Symbols that speak without words. We create logos that are memorable, meaningful, and adaptable.",
+                    outcome: "Outcome: A symbol that lasts.",
+                    caps: ["Minimal Logo", "3D Logo", "Wordmark", "Emblem", "Brand Kit"]
+                },
+                web: {
+                    title: "Web Development",
+                    desc: "Websites built for performance and growth. From simple landing pages to complex platforms.",
+                    outcome: "Outcome: Flawless performance.",
+                    caps: ["Custom Web", "WordPress", "E-Commerce", "Landing Pages", "Speed Optimization"]
+                },
+                app: {
+                    title: "App Development",
+                    desc: "Apps designed for real users. We develop robust, scalable mobile applications across platforms.",
+                    outcome: "Outcome: Scalable mobile solutions.",
+                    caps: ["iOS", "Android", "React Native", "Flutter", "API Integration"]
+                }
+            };
+
+            // Interactive Elements
+            const displayBg = document.querySelectorAll('.display-bg');
+            const displayContent = document.getElementById('display-txt');
+            const dTitle = document.getElementById('d-title');
+            const dDesc = document.getElementById('d-desc');
+            const dOutcome = document.getElementById('d-outcome');
+            const dCaps = document.getElementById('d-caps');
+            const navItems = document.querySelectorAll('.nav-item');
+
+            // Initial Load
+            updateContent('brand');
+
+            // Update Display Function
+            window.updateDisplay = function(id) {
+                // Update Active State on List
+                navItems.forEach(item => item.classList.remove('active'));
+                event.currentTarget.classList.add('active');
+
+                // Change Image
+                displayBg.forEach(bg => bg.classList.remove('active'));
+                const nextImg = document.getElementById('img-' + id);
+                if(nextImg) nextImg.classList.add('active');
+
+                // Animate Text Out
+                displayContent.style.opacity = 0;
+                displayContent.style.transform = "translateY(20px)";
+
+                // Update Content & Animate In
+                setTimeout(() => {
+                    updateContent(id);
+                    displayContent.style.opacity = 1;
+                    displayContent.style.transform = "translateY(0)";
+                }, 200);
+            };
+
+            function updateContent(id) {
+                const data = serviceData[id];
+                if(!data) return;
+                dTitle.innerText = data.title;
+                dDesc.innerText = data.desc;
+                dOutcome.innerText = data.outcome;
+                dCaps.innerHTML = data.caps.map(cap => `<span class="cap-pill">${cap}</span>`).join('');
+            }
+
+            // Color swap for CTA section
+            ScrollTrigger.create({
+                trigger: ".scene-cta", 
+                start: "top 50px", 
+                end: "bottom 50px",
+                onEnter: () => {
+                    gsap.to([".logo", ".menu-btn"], { color: "#000" });
+                    gsap.to(".bar", { backgroundColor: "#000" });
+                },
+                onLeaveBack: () => {
+                    gsap.to([".logo", ".menu-btn"], { color: "#fff" });
+                    gsap.to(".bar", { backgroundColor: "#fff" });
+                }
+            });
+
+            // Audience items animation
+            gsap.utils.toArray('.audience-item').forEach((item, i) => {
+                ScrollTrigger.create({
+                    trigger: item,
+                    start: "top 90%",
+                    onEnter: () => item.classList.add('in-view')
+                });
+            });
+            
+            // Final callout animation
+            gsap.utils.toArray('.final-callout').forEach(item => {
+                ScrollTrigger.create({
+                    trigger: item,
+                    start: "top 85%",
+                    onEnter: () => item.classList.add('in-view')
+                });
+            });
+
+            // Hero parallax
+            document.addEventListener("mousemove", (e) => {
+                const x = (e.clientX / window.innerWidth - 0.5) * 20;
+                const y = (e.clientY / window.innerHeight - 0.5) * 20;
+                gsap.to(".parallax-text", { 
+                    x: x, 
+                    y: y, 
+                    duration: 1, 
+                    ease: "power2.out" 
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

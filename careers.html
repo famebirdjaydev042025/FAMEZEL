@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - FAMEZEL | Join Our Creative Team & Manifestations</title>
+    <meta name="description" content="Explore career opportunities at FAMEZEL. Join our creative team and help us empower brands with freedom of expression. Discover open positions and our company culture.">
+    <meta name="keywords" content="FAMEZEL careers, creative jobs, design jobs, brand agency careers, Ahmedabad jobs, creative team, job opportunities">
+    <meta name="author" content="FAMEZEL">
+    <meta property="og:title" content="Careers - FAMEZEL | Join Our Creative Team">
+    <meta property="og:description" content="Explore career opportunities at FAMEZEL. Join our creative team and help us empower brands with freedom of expression.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://famezel.com/Careers.html">
+    <link rel="canonical" href="https://famezel.com/Careers.html">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;700&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Component System -->
+    <script src="components.js" defer></script>
+
+    <style>
+        :root {
+            --c-void: #050505;
+            --c-light: #F2F2F2;
+            --c-text: #FFFFFF;
+            --c-text-dark: #050505;
+            --f-header: 'Cormorant Garamond', serif;
+            --f-body: 'Inter', sans-serif;
+            --f-tech: 'JetBrains Mono', monospace;
+            --gutter: clamp(1.5rem, 5vw, 4rem);
+            --site-width: 1400px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--c-void); color: var(--c-text); font-family: var(--f-body); overflow-x: hidden; }
+
+        .grain {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
+            opacity: 0.05; pointer-events: none; z-index: 9999;
+        }
+
+        /* =========================================
+           HEADER & MENU STYLES (FROM ABOUT.HTML)
+           ========================================= */
+        .site-header { 
+            position: fixed; top: 0; left: 0; width: 100%; 
+            padding: 1.5rem var(--gutter);
+            display: flex; justify-content: space-between; align-items: center; 
+            z-index: 9999; mix-blend-mode: difference; color: #fff; 
+        }
+        
+        .logo { font-family: var(--f-body); font-weight: 700; font-size: 1.2rem; letter-spacing: -0.05em; text-transform: uppercase; text-decoration: none; color: inherit; }
+        
+        .menu-btn { display: flex; align-items: center; gap: 1rem; cursor: pointer; }
+        .menu-text { font-family: var(--f-body); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.1em; }
+        
+        .hamburger { display: flex; flex-direction: column; gap: 6px; width: 24px; }
+        .bar { width: 100%; height: 2px; background-color: #fff; transition: transform 0.3s ease, background-color 0.3s ease; }
+
+        /* Menu Overlay */
+        .menu-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+            background-color: rgba(5, 5, 5, 0.98); 
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            z-index: 9990; display: flex; padding: 0 var(--gutter); align-items: center;
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); transition: clip-path 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        .menu-overlay.active { clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
+
+        .menu-grid { width: 100%; max-width: var(--site-width); margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: center; }
+        
+        .menu-link { display: inline-block; font-family: var(--f-header); font-size: clamp(2.5rem, 5vw, 5.5rem); color: #fff; text-decoration: none; line-height: 1.1; transform: translateY(100%); opacity: 0.8; }
+        .menu-link-item { overflow: hidden; margin-bottom: 0.5rem; padding-bottom: 0.2rem; }
+        .menu-link:hover { opacity: 1; font-style: italic; padding-left: 20px; color: #E0E0E0; transition: all 0.3s ease; }
+        .menu-number { font-family: var(--f-body); font-size: 0.9rem; color: #999; margin-right: 1.5rem; vertical-align: super; letter-spacing: 0.05em; }
+        
+        .menu-side-info { display: flex; flex-direction: column; border-left: 1px solid rgba(255,255,255,0.15); padding-left: 3rem; color: rgba(255,255,255,0.7); font-family: var(--f-body); opacity: 0; transform: translateY(20px); }
+        .menu-side-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; color: #fff;}
+        .menu-side-link { display: block; color: inherit; text-decoration: none; margin-bottom: 0.5rem; font-size: 1rem; transition: color 0.3s;}
+        .menu-side-link:hover { color: #fff; }
+        .social-row { margin-top: 2rem; display: flex; gap: 1.5rem; }
+
+        .menu-btn.active .bar:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+        .menu-btn.active .bar:nth-child(2) { transform: rotate(-45deg) translate(5px, -6px); }
+
+        /* HERO */
+        .careers-hero { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 2rem; }
+        .hero-title { font-family: var(--f-header); font-size: clamp(3.5rem, 6.5vw, 8rem); font-weight: 300; letter-spacing: 0.8em; opacity: 0; text-transform: uppercase; line-height: 0.95; }
+        .h-hero, .hero-title, .main-title { font-family: var(--f-header); font-size: clamp(3.5rem, 6.5vw, 8rem); line-height: 0.95; }
+        .hero-sub { font-family: var(--f-body); max-width: 600px; margin-top: 2.5rem; opacity: 0; font-weight: 300; color: rgba(255,255,255,0.7); line-height: 1.6; font-size: 1.1rem; }
+
+        /* SECTIONS */
+        .section-light { background-color: var(--c-light); color: var(--c-text-dark); padding: 10rem 2rem; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .meta-label { font-family: var(--f-tech); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.3em; opacity: 0.4; margin-bottom: 1.5rem; display: block; }
+        .heading-large { font-family: var(--f-header); font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.1; font-weight: 400; }
+        
+        /* CONTENT STYLES */
+        .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; margin-top: 4rem; }
+        .culture-item { margin-bottom: 3rem; opacity: 0; transform: translateY(30px); }
+        .culture-title { font-family: var(--f-header); font-size: 2rem; margin-bottom: 0.5rem; }
+        .culture-text { font-family: var(--f-body); font-size: 1rem; opacity: 0.7; line-height: 1.6; }
+
+        /* ROLES LIST */
+        .role-item { 
+            border-top: 1px solid rgba(0,0,0,0.1); 
+            padding: 3rem 0; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .role-item:last-child { border-bottom: 1px solid rgba(0,0,0,0.1); }
+        .role-name { font-family: var(--f-header); font-size: 2.2rem; transition: 0.4s; }
+        .role-status { font-family: var(--f-tech); font-size: 0.75rem; letter-spacing: 0.1em; opacity: 0.4; }
+        .role-item:hover .role-name { transform: translateX(20px); font-style: italic; }
+
+        /* QUOTES */
+        .quote-section { padding: 10rem 2rem; background-color: var(--c-light); color: var(--c-text-dark); border-top: 1px solid rgba(0,0,0,0.05); }
+        .quote-text { font-family: var(--f-header); font-size: clamp(1.5rem, 3vw, 2.5rem); font-style: italic; max-width: 800px; line-height: 1.3; margin-bottom: 2rem; }
+        .quote-author { font-family: var(--f-tech); font-size: 0.8rem; letter-spacing: 0.2em; opacity: 0.5; }
+
+        /* FORM */
+        .form-section { background-color: var(--c-light); color: var(--c-text-dark); padding: 5rem 2rem 12rem; }
+        .form-container { max-width: 800px; margin: 0 auto; }
+        .form-group { position: relative; margin-bottom: 4.5rem; }
+        .form-input { 
+            width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(0,0,0,0.2); 
+            padding: 1rem 0; font-family: var(--f-header); font-size: 1.6rem; outline: none; transition: 0.4s;
+        }
+        .form-label { position: absolute; top: 1rem; left: 0; font-family: var(--f-tech); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; pointer-events: none; transition: 0.4s; opacity: 0.5; }
+        .form-input:focus + .form-label, .form-input:not(:placeholder-shown) + .form-label { top: -1.5rem; font-size: 0.65rem; opacity: 1; color: #000; }
+        
+        .submit-btn {
+            background: var(--c-void); color: #fff; padding: 1.8rem; border: none;
+            font-family: var(--f-tech); text-transform: uppercase; letter-spacing: 0.3em; cursor: pointer; transition: 0.4s; width: 100%;
+        }
+        .submit-btn:hover { letter-spacing: 0.6em; background: #1a1a1a; }
+
+        /* Unified submit/button hover (ensure same across pages) */
+        .submit-btn, .btn-hero, .final-btn, .cta-btn, .cta-btn-dark, .btn-outline {
+            letter-spacing: 0.3em; transition: 0.4s;
+        }
+        .submit-btn:hover, .btn-hero:hover, .final-btn:hover, .cta-btn:hover, .cta-btn-dark:hover, .btn-outline:hover {
+            letter-spacing: 0.6em; background: #1a1a1a; color: #fff;
+        }
+
+        /* FOOTER */
+        .footer-section { background-color: var(--c-void); color: #fff; padding: 12rem 2rem; text-align: center; }
+
+        @media (max-width: 768px) { 
+            .content-grid { grid-template-columns: 1fr; gap: 3rem; } 
+            .site-header { padding: 1.5rem; }
+            .menu-grid { grid-template-columns: 1fr; gap: 4rem;}
+            .menu-side-info { border-left: none; padding-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grain"></div>
+
+
+    <main>
+        <section class="careers-hero">
+            <h1 class="hero-title parallax-text">Build Freedom</h1>
+            <p class="hero-sub">Build More Than a Career. At Famezel For Freedom, work isn’t about titles — it’s about impact. Join a team where your voice matters and your growth is intentional.</p>
+        </section>
+
+        <section class="section-light">
+            <div class="container">
+                <span class="meta-label">Collaborators</span>
+                <h2 class="heading-large reveal-text">We don’t hire employees.<br>We build collaborators.</h2>
+                <div class="content-grid">
+                    <div class="culture-item">
+                        <h3 class="culture-title">Foundational Freedom</h3>
+                        <p class="culture-text">We believe the best work happens when people feel free — mentally, creatively, and professionally. Here, you create without limits.</p>
+                    </div>
+                    <div class="culture-item">
+                        <h3 class="culture-title">Intentional Evolution</h3>
+                        <p class="culture-text">We don’t expect you to fit in. We expect you to stand out. Growth happens through learning and purposeful evolution.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-light" style="padding-top: 0;">
+            <div class="container">
+                <span class="meta-label">Open Frequencies</span>
+                <h2 class="heading-large reveal-text" style="margin-bottom: 5rem;">Join the Movement</h2>
+                
+                <div class="role-list">
+                    <a href="#apply" class="role-item">
+                        <span class="role-name">Creative & Content</span>
+                        <span class="role-status">OPEN SIGNAL</span>
+                    </a>
+                    <a href="#apply" class="role-item">
+                        <span class="role-name">Strategy & Operations</span>
+                        <span class="role-status">OPEN SIGNAL</span>
+                    </a>
+                    <a href="#apply" class="role-item">
+                        <span class="role-name">Technology & Digital</span>
+                        <span class="role-status">OPEN SIGNAL</span>
+                    </a>
+                    <a href="#apply" class="role-item">
+                        <span class="role-name">Community & Partnerships</span>
+                        <span class="role-status">OPEN SIGNAL</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <div class="container">
+                <div class="culture-item">
+                    <p class="quote-text">“This is the first place where my ideas actually shape the work.”</p>
+                    <p class="quote-author">— Creative Contributor</p>
+                </div>
+                <div class="culture-item" style="margin-top: 8rem; margin-left: auto; text-align: right;">
+                    <p class="quote-text">“I don’t feel managed here — I feel trusted.”</p>
+                    <p class="quote-author">— Team Member</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="form-section" id="apply">
+            <div class="form-container">
+                <div style="margin-bottom: 6rem; text-align: center;">
+                    <span class="meta-label">Application</span>
+                    <h2 class="heading-large">Manifest Your Story</h2>
+                    <p style="margin-top: 2rem; opacity: 0.6; font-family: var(--f-body);">Resumes matter, but passion matters more. Tell us your vision.</p>
+                </div>
+
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder=" " required>
+                        <label class="form-label">Name / Identity</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-input" placeholder=" " required>
+                        <label class="form-label">Signal Point (Email)</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder=" " required>
+                        <label class="form-label">Frequency (Desired Role)</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-input" placeholder=" " style="height: 120px; resize: none;"></textarea>
+                        <label class="form-label">The Stand (Your passion and vision)</label>
+                    </div>
+                    <button type="submit" class="submit-btn">Transmit Alignment</button>
+                </form>
+            </div>
+        </section>
+
+        <footer class="footer-section">
+            <h2 class="heading-large" style="margin-bottom: 2.5rem;">This isn’t just a job.</h2>
+            <p style="font-family: var(--f-header); font-size: 2.2rem; font-style: italic; opacity: 0.4;">It’s a stand for something bigger.</p>
+            <div style="margin-top: 8rem; font-family: var(--f-tech); font-size: 0.75rem; opacity: 0.2; letter-spacing: 0.2em;">© FAMEZEL 2026 // ESTABLISH FREEDOM</div>
+        </footer>
+    </main>
+
+    <script>
+            <div class="marquee-track">
+                <span>Famezel For Freedom • Designed for Clarity • Global / Remote • Famezel For Freedom • Designed for Clarity • Global / Remote • </span>
+            </div>
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-col reveal-item">
+                    <span class="footer-label">Navigation</span>
+                    <ul class="footer-links">
+                        <li><a href="About.html">About</a></li>
+                        <li><a href="Services.html">Services</a></li>
+                        <li><a href="work.html">Work</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    
+                    <span class="footer-label" style="margin-top: 2rem;">Legal</span>
+                    <ul class="footer-links">
+                        <li><a href="privacy-policy.html" style="font-size: 14px;">Privacy Policy</a></li>
+                        <li><a href="terms-conditions.html" style="font-size: 14px;">Terms & Conditions</a></li>
+                        <li><a href="cookie-policy.html" style="font-size: 14px;">Cookie Policy</a></li>
+                        <li><a href="disclaimer.html" style="font-size: 14px;">Disclaimer</a></li>
+                        <li><a href="refund-policy.html" style="font-size: 14px;">Refund Policy</a></li>
+                        <li><a href="sitemap.html" style="font-size: 14px;">Sitemap</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col reveal-item">
+                    <span class="footer-label">Get in Touch</span>
+                    <a href="mailto:hello@famezel.com" class="contact-detail">hello@famezel.com</a>
+                    <a href="tel:+910000000000" class="contact-detail">+91 91040 33621</a>
+                    <div style="margin-top: 20px;">
+                        <ul class="footer-links">
+                            <li><a href="#" style="font-size: 14px;">Instagram</a></li>
+                            <li><a href="#" style="font-size: 14px;">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-col reveal-item">
+                    <span class="footer-label">Availability</span>
+                    <div class="status-box">
+                        <span id="local-time">00:00:00</span>
+                        <div class="status-dot-wrap">
+                            <span class="dot"></span> OPEN FOR PROJECTS
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-col reveal-item">
+                    <span class="footer-label">Studio Location</span>
+                    <div class="map-wrapper">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.3344654922114!2d72.53177657593652!3d23.084897914013446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e83002579df67%3A0x67313331a986259c!2sRudram%20Icon!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin&q=Rudram+icon+Gota+Ahmedabad" 
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+                    <p style="font-size: 10px; color: var(--accent); margin-top: 10px; line-height: 1.4; text-transform: uppercase;">
+                        403, Rudram Icon, Opp. Lambda House,<br>Gota, Ahmedabad 382481
+                    </p>
+                </div>
+
+                <div class="footer-col reveal-item" style="display: flex; justify-content: flex-end;">
+                    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 19V5M5 12l7-7 7 7"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom reveal-item">
+            <h2 class="footer-logo">Famezel | For   Freedom</h2>
+            <div class="footer-legal">
+                <span>© 2026 EDITION</span>
+                <span>ALL RIGHTS RESERVED</span>
+                <span>AHMEDABAD, IN</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function updateTime() {
+            const timeEl = document.getElementById('local-time');
+            if (timeEl) {
+                const now = new Date();
+                timeEl.textContent = now.toLocaleTimeString('en-GB', { 
+                    hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false 
+                }) + " IST";
+            }
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        const revealItems = () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('active');
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal-item').forEach(item => observer.observe(item));
+        };
+        window.addEventListener('DOMContentLoaded', revealItems);
+    </script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // --- 1. MENU LOGIC (UNIFIED ACROSS PAGES) ---
+        const menuBtn = document.querySelector('.menu-btn');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        const menuLinks = document.querySelectorAll('.menu-link');
+        const menuSide = document.querySelector('.menu-side-info');
+        const menuText = document.querySelector('.menu-text');
+        let isMenuOpen = false;
+
+        function isInLightArea() {
+            const light = document.querySelector('.section-light') || document.querySelector('.light-wrapper');
+            if (!light) return false;
+            const form = document.querySelector('.form-section');
+            const lightStart = light.offsetTop;
+            const lightEnd = form ? (form.offsetTop + form.offsetHeight) : (light.offsetTop + light.offsetHeight);
+            const scrollPos = window.scrollY + 100;
+            return (scrollPos > lightStart && scrollPos < lightEnd);
+        }
+
+        menuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                menuOverlay.classList.add('active');
+                menuBtn.classList.add('active');
+                menuText.textContent = "Close";
+                gsap.to('.menu-btn', { color: '#fff', duration: 0.3 });
+                gsap.to('.bar', { backgroundColor: '#fff', duration: 0.3 });
+                gsap.to(menuLinks, { y: 0, duration: 0.8, stagger: 0.1, ease: "power3.out", delay: 0.3 });
+                gsap.to(menuSide, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out", delay: 0.5 });
+            } else {
+                menuOverlay.classList.remove('active');
+                menuBtn.classList.remove('active');
+                menuText.textContent = "Menu";
+                const lightMode = isInLightArea();
+                if(lightMode) {
+                    gsap.to('.menu-btn', { color: '#050505', duration: 0.3 });
+                    gsap.to('.bar', { backgroundColor: '#050505', duration: 0.3 });
+                    gsap.to('.logo', { color: '#050505', duration: 0.3 });
+                } else {
+                    gsap.to('.menu-btn', { color: '#fff', duration: 0.3 });
+                    gsap.to('.bar', { backgroundColor: '#fff', duration: 0.3 });
+                    gsap.to('.logo', { color: '#fff', duration: 0.3 });
+                }
+                gsap.to(menuLinks, { y: "100%", duration: 0.5, ease: "power3.in" });
+                gsap.to(menuSide, { opacity: 0, y: 20, duration: 0.3 });
+            }
+        });
+
+        // Close menu when clicking a link
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if(isMenuOpen) menuBtn.click();
+            });
+        });
+
+        // 2. HERO REVEAL
+        const tl = gsap.timeline();
+        tl.to(".hero-title", { opacity: 1, letterSpacing: "0.15em", duration: 2.5, ease: "expo.out" })
+          .to(".hero-sub", { opacity: 1, y: -20, duration: 1.5 }, "-=1.5");
+
+        // 3. FONT WEIGHT DISTORTION ON SCROLL
+        gsap.utils.toArray(".reveal-text").forEach(text => {
+            gsap.fromTo(text, 
+                { fontWeight: 100, opacity: 0, scale: 0.95 },
+                {
+                    fontWeight: 400, opacity: 1, scale: 1,
+                    scrollTrigger: {
+                        trigger: text,
+                        start: "top 90%",
+                        end: "top 45%",
+                        scrub: true
+                    }
+                }
+            );
+        });
+
+        // 4. CULTURE & ROLE STAGGER
+        gsap.to(".culture-item, .role-item", {
+            opacity: 1, y: 0, stagger: 0.2, duration: 1.2, ease: "power4.out",
+            scrollTrigger: {
+                trigger: ".container",
+                start: "top 75%"
+            }
+        });
+
+        // 5. HEADER COLOR SWAP (UPDATED FOR NEW MENU STRUCTURE)
+        ScrollTrigger.create({
+            trigger: ".section-light",
+            start: "top 10%",
+            endTrigger: ".form-section",
+            end: "bottom 10%",
+            onEnter: () => {
+                gsap.to(".site-header", { mixBlendMode: "normal", duration: 0.4 });
+                gsap.to(".logo", { color: "#000", duration: 0.4 });
+                gsap.to(".menu-btn", { color: "#000", duration: 0.4 });
+                gsap.to(".bar", { backgroundColor: "#000", duration: 0.4 });
+            },
+            onLeaveBack: () => {
+                gsap.to(".site-header", { mixBlendMode: "difference", duration: 0.4 });
+                gsap.to(".logo", { color: "#fff", duration: 0.4 });
+                gsap.to(".menu-btn", { color: "#fff", duration: 0.4 });
+                gsap.to(".bar", { backgroundColor: "#fff", duration: 0.4 });
+            },
+            onLeave: () => {
+                gsap.to(".site-header", { mixBlendMode: "difference", duration: 0.4 });
+                gsap.to(".logo", { color: "#fff", duration: 0.4 });
+                gsap.to(".menu-btn", { color: "#fff", duration: 0.4 });
+                gsap.to(".bar", { backgroundColor: "#fff", duration: 0.4 });
+            }
+        });
+    </script>
+    <script>
+        // Parallax hero text (mouse-follow)
+        document.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth - 0.5) * 20;
+            const y = (e.clientY / window.innerHeight - 0.5) * 20;
+            if (window.gsap) gsap.to('.parallax-text', { x: x, y: y, duration: 1, ease: 'power2.out' });
+        });
+    </script>
+</body>
+</html>
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero animations
+        gsap.to(".hero-title", { opacity: 1, duration: 1.5, delay: 0.5 });
+        gsap.to(".hero-sub", { opacity: 1, y: 0, duration: 1.2, delay: 0.8 });
+
+        // Reveal animations
+        gsap.utils.toArray(".culture-item").forEach((item, i) => {
+            gsap.to(item, {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                delay: i * 0.2,
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top 80%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+        });
+
+        gsap.utils.toArray(".role-item").forEach((item, i) => {
+            gsap.to(item, {
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                delay: i * 0.1,
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+        });
+
+        // Menu functionality
+        const menuBtn = document.querySelector('.menu-btn');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        const menuLinks = document.querySelectorAll('.menu-link');
+        const menuSideInfo = document.querySelector('.menu-side-info');
+
+        let menuOpen = false;
+
+        menuBtn.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            menuBtn.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+
+            if (menuOpen) {
+                gsap.to(menuLinks, { y: 0, opacity: 1, duration: 0.6, stagger: 0.1, delay: 0.3 });
+                gsap.to(menuSideInfo, { opacity: 1, y: 0, duration: 0.8, delay: 0.6 });
+            } else {
+                gsap.to(menuLinks, { y: 100, opacity: 0, duration: 0.4, stagger: 0.05 });
+                gsap.to(menuSideInfo, { opacity: 0, y: 20, duration: 0.4 });
+            }
+        });
+
+        // Form enhancements
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('focused');
+            });
+            input.addEventListener('blur', () => {
+                if (!input.value) {
+                    input.parentElement.classList.remove('focused');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

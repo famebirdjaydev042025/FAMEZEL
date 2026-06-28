@@ -1,0 +1,417 @@
+/* =========================================
+   FAMEZEL GLOBAL DESIGN SYSTEM
+   UNIFIED ACROSS ALL PAGES
+   ========================================= */
+
+/* Font Loading - Centralized */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500;700&family=JetBrains+Mono:wght@100;400&display=swap');
+
+/* CSS Variables - Master Design System */
+:root {
+    /* Colors - Void Theme */
+    --c-void: #050505;
+    --c-void-depth: #0a0a0a;
+    --c-paper: #F2F2F2;
+    --c-ink: #050505;
+    --c-accent: #ee2a7b;
+
+    /* The Instagram Creator Gradient */
+    --ig-gradient: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+    --ig-gradient-glow: linear-gradient(45deg, rgba(249, 206, 52, 0.3), rgba(238, 42, 123, 0.3), rgba(98, 40, 215, 0.3));
+
+    /* Typography */
+    --f-header: 'Cormorant Garamond', serif;
+    --f-body: 'Inter', sans-serif;
+    --f-tech: 'JetBrains Mono', monospace;
+    --f-ui: 'Manrope', sans-serif;
+
+    /* Layout */
+    --ease-cinematic: cubic-bezier(0.19, 1, 0.22, 1);
+    --site-width: 1400px;
+    --gutter: clamp(1.5rem, 5vw, 4rem);
+    --z-header: 10000;
+    --z-cursor: 11000;
+}
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Base Body Styles */
+body {
+    background-color: var(--c-void);
+    color: var(--c-paper);
+    font-family: var(--f-body);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Hide Scrollbar */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Global Typography System */
+.chapter-marker {
+    font-family: var(--f-tech);
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    display: block;
+    opacity: 0.5;
+    border-left: 1px solid currentColor;
+    padding-left: 15px;
+}
+
+.h-hero {
+    font-family: var(--f-header);
+    font-size: clamp(3.5rem, 6.5vw, 8rem);
+    line-height: 1.1;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    letter-spacing: -0.03em;
+    overflow: visible;
+}
+
+.h-sub {
+    font-family: var(--f-header);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    overflow: visible;
+}
+
+.p-lead {
+    font-size: clamp(1.1rem, 1.3vw, 1.5rem);
+    line-height: 1.6;
+    max-width: 650px;
+    opacity: 0.8;
+    font-weight: 300;
+    margin: 0 auto;
+}
+
+/* Instagram Gradient Effects */
+.stroke-gradient {
+    -webkit-text-stroke: 2px transparent;
+    background: var(--ig-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+/* Button System */
+.btn-outline,
+.btn-hero,
+.final-btn {
+    padding: 1rem 3rem;
+    background: transparent;
+    border: 1px solid;
+    border-image: var(--ig-gradient) 1;
+    color: #fff;
+    font-family: var(--f-tech);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    font-size: 0.75rem;
+    display: inline-block;
+    position: relative;
+    background-size: 200% 200%;
+}
+
+.btn-outline:hover,
+.btn-hero:hover,
+.final-btn:hover {
+    letter-spacing: 0.6em;
+    border-image: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7, #f9ce34, #ee2a7b) 1;
+    animation: gradientShift 1.5s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0% { border-image: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7) 1; }
+    25% { border-image: linear-gradient(90deg, #ee2a7b, #6228d7, #f9ce34) 1; }
+    50% { border-image: linear-gradient(135deg, #6228d7, #f9ce34, #ee2a7b) 1; }
+    75% { border-image: linear-gradient(180deg, #f9ce34, #6228d7, #ee2a7b) 1; }
+    100% { border-image: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7) 1; }
+}
+
+/* Animation Classes */
+.line-mask {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    padding-bottom: 0.2em;
+}
+
+.line-mask-inner {
+    display: block;
+    transform: translateY(110%);
+    will-change: transform;
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    will-change: opacity, transform;
+}
+
+/* Atmospheric Effects */
+.grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 999;
+}
+
+#dust-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+/* Progress Bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--ig-gradient);
+    z-index: var(--z-header);
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mt-3 { margin-top: 3rem; }
+.mt-4 { margin-top: 4rem; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mb-4 { margin-bottom: 4rem; }
+
+/* Container System */
+.container {
+    width: min(90%, var(--site-width));
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN SYSTEM
+   Mobile-First Approach
+   ========================================= */
+
+/* Small Mobile Devices (320px+) */
+@media (max-width: 480px) {
+    :root {
+        --gutter: 1rem;
+    }
+    
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    .h-hero {
+        font-size: clamp(2rem, 8vw, 2.8rem);
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        margin-bottom: 2rem;
+    }
+    
+    .h-sub {
+        font-size: clamp(1.6rem, 6vw, 2.2rem);
+        line-height: 1.25;
+        margin-bottom: 1.5rem;
+    }
+    
+    .p-lead {
+        font-size: 0.95rem;
+        max-width: 95%;
+        line-height: 1.5;
+    }
+    
+    .chapter-marker {
+        font-size: 0.6rem;
+        margin-bottom: 1.2rem;
+        padding-left: 12px;
+    }
+    
+    .container {
+        width: 95%;
+        padding: 0 1rem;
+    }
+}
+
+/* Standard Mobile (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    :root {
+        --gutter: 1.5rem;
+    }
+    
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    .h-hero {
+        font-size: clamp(2.3rem, 9vw, 3.2rem);
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin-bottom: 2.5rem;
+    }
+    
+    .h-sub {
+        font-size: clamp(1.9rem, 7vw, 2.6rem);
+        line-height: 1.2;
+        margin-bottom: 1.8rem;
+    }
+    
+    .p-lead {
+        font-size: 1rem;
+        max-width: 92%;
+        line-height: 1.6;
+    }
+    
+    .chapter-marker {
+        font-size: 0.65rem;
+        margin-bottom: 1.4rem;
+        padding-left: 14px;
+    }
+    
+    .container {
+        width: 92%;
+        padding: 0 1.5rem;
+    }
+}
+
+/* Tablets Portrait (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    :root {
+        --gutter: 2rem;
+    }
+    
+    .h-hero {
+        font-size: clamp(3rem, 6vw, 4.5rem);
+        line-height: 1.1;
+        margin-bottom: 2.8rem;
+    }
+    
+    .h-sub {
+        font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+        line-height: 1.2;
+        margin-bottom: 2rem;
+    }
+    
+    .p-lead {
+        font-size: 1.1rem;
+        max-width: 85%;
+    }
+    
+    .container {
+        width: 88%;
+        padding: 0 2rem;
+    }
+}
+
+/* Tablets Landscape & Small Laptops (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    :root {
+        --gutter: 3rem;
+    }
+    
+    .h-hero {
+        font-size: clamp(4rem, 6.5vw, 6rem);
+        line-height: 1.1;
+        margin-bottom: 3rem;
+    }
+    
+    .h-sub {
+        font-size: clamp(2.8rem, 5vw, 4rem);
+        line-height: 1.2;
+        margin-bottom: 2.2rem;
+    }
+    
+    .p-lead {
+        font-size: 1.2rem;
+        max-width: 75%;
+    }
+    
+    .container {
+        width: 85%;
+        padding: 0 3rem;
+    }
+}
+
+/* Large Desktops & Wide Screens (1441px+) */
+@media (min-width: 1441px) {
+    :root {
+        --gutter: 4rem;
+    }
+    
+    .h-hero {
+        font-size: clamp(5rem, 6.5vw, 8rem);
+        line-height: 1.1;
+        margin-bottom: 3rem;
+    }
+    
+    .h-sub {
+        font-size: clamp(3.5rem, 5vw, 4.5rem);
+        line-height: 1.2;
+        margin-bottom: 2.5rem;
+    }
+    
+    .p-lead {
+        font-size: 1.4rem;
+        max-width: 70%;
+    }
+    
+    .container {
+        width: 80%;
+        padding: 0 4rem;
+    }
+}
+
+/* Legacy Mobile Support (max-width: 768px) - Maintained for compatibility */
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    .h-hero {
+        font-size: clamp(2.3rem, 9vw, 3.2rem);
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+    }
+    
+    .h-sub {
+        font-size: clamp(1.9rem, 7vw, 2.6rem);
+        line-height: 1.2;
+    }
+    
+    .p-lead {
+        font-size: 1rem;
+        max-width: 92%;
+    }
+    
+    .chapter-marker {
+        font-size: 0.65rem;
+        margin-bottom: 1.4rem;
+    }
+}

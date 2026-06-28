@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work - FAMEZEL | Portfolio & Case Studies</title>
+    <meta name="description" content="Explore FAMEZEL's portfolio of creative work including brand identity, digital experiences, and strategic design solutions. See how we transform ideas into impactful visual communications.">
+    <meta name="keywords" content="FAMEZEL portfolio, creative work, brand identity, digital design, case studies, design agency work">
+    <meta name="author" content="FAMEZEL">
+    <meta property="og:title" content="Our Work - FAMEZEL | Portfolio & Case Studies">
+    <meta property="og:description" content="Explore FAMEZEL's portfolio of creative work including brand identity, digital experiences, and strategic design solutions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://famezel.com/work.html">
+    <meta property="og:image" content="https://famezel.com/assets/og-image-work.jpg">
+    <link rel="canonical" href="https://famezel.com/work.html">
+    
+    <!-- Unified System -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    
+    <!-- Unified JavaScript -->
+    <script src="common.js" defer></script>
+    <script src="components.js" defer></script>
+
+    <style>
+        /* =========================================
+           CINEMATIC WORK PAGE STYLES
+           ALIGNED WITH UNIFIED SYSTEM
+           ========================================= */
+        
+        /* BASE STYLES */
+        body {
+            background-color: #050505;
+            color: #F2F2F2;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* HERO SECTION - Cinematic */
+        .scene-hero { 
+            height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            background: radial-gradient(circle at 50% 50%, #0a0a0a 0%, #050505 70%);
+            position: relative;
+            overflow: visible;
+            padding: 2rem;
+        }
+
+        /* CONTENT SECTIONS */
+        .content-section {
+            padding: 8rem clamp(1.5rem, 5vw, 4rem);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .editorial-copy {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .editorial-copy p {
+            margin-bottom: 1.5rem;
+        }
+
+        .editorial-copy strong {
+            font-weight: 600;
+            background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* TYPOGRAPHY SYSTEM */
+        .display-xl {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3.5rem, 6.5vw, 8rem);
+            line-height: 1.1;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            letter-spacing: -0.03em;
+            overflow: visible;
+        }
+
+        .display-lg {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            overflow: visible;
+        }
+
+        .text-lead {
+            font-size: clamp(1.1rem, 1.3vw, 1.5rem);
+            line-height: 1.6;
+            max-width: 650px;
+            opacity: 0.8;
+            font-weight: 300;
+            margin: 0 auto;
+        }
+
+        .micro-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            opacity: 0.6;
+            margin-top: 2rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .split-text {
+            overflow: visible;
+        }
+
+        .chapter-marker {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            display: block;
+            opacity: 0.5;
+            border-left: 1px solid currentColor;
+            padding-left: 15px;
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            will-change: opacity, transform;
+        }
+
+        @keyframes gradientShift {
+            0% { border-image: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7) 1; }
+            25% { border-image: linear-gradient(90deg, #ee2a7b, #6228d7, #f9ce34) 1; }
+            50% { border-image: linear-gradient(135deg, #6228d7, #f9ce34, #ee2a7b) 1; }
+            75% { border-image: linear-gradient(180deg, #f9ce34, #6228d7, #ee2a7b) 1; }
+            100% { border-image: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7) 1; }
+        }
+
+        .btn-primary {
+            padding: 1rem 3rem;
+            background: transparent;
+            border: 1px solid;
+            border-image: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7) 1;
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            font-size: 0.75rem;
+            display: inline-block;
+            position: relative;
+        }
+
+        .btn-primary:hover {
+            letter-spacing: 0.6em;
+            border-image: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7, #f9ce34, #ee2a7b) 1;
+            animation: gradientShift 1.5s ease-in-out infinite;
+        }
+        /* WORK GRID SYSTEM */
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 4rem;
+            margin: 6rem 0;
+        }
+
+        .work-card {
+            background: #0a0a0a;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            min-height: 400px;
+        }
+
+        .work-card:hover {
+            border: 1px solid rgba(249, 206, 52, 0.3);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .work-image {
+            width: 100%;
+            height: 250px;
+            background: #0a0a0a;
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(1);
+            transition: filter 0.6s ease;
+        }
+
+        .work-card:hover .work-image {
+            filter: grayscale(0);
+        }
+
+        .work-content {
+            padding: 3rem;
+        }
+
+        .work-category {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #ee2a7b;
+            margin-bottom: 1rem;
+            transition: all 0.4s ease;
+        }
+
+        .work-card:hover .work-category {
+            background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transform: translateX(5px);
+        }
+
+        .work-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #fff;
+            transition: all 0.4s ease;
+        }
+
+        .work-card:hover .work-title {
+            background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transform: translateX(5px);
+        }
+
+        .work-description {
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .work-cta {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .work-cta:hover {
+            opacity: 1;
+            color: #ee2a7b;
+        }
+
+        /* PROCESS TIMELINE SECTION */
+        .process-section {
+            background: #F2F2F2;
+            color: #050505;
+            padding: 8rem clamp(1.5rem, 5vw, 4rem);
+        }
+
+        .process-section .chapter-marker {
+            color: #050505;
+            border-color: #050505;
+        }
+
+        .process-section .display-lg {
+            color: #050505;
+        }
+
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        .step-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #050505;
+        }
+
+        .step-description {
+            opacity: 0.8;
+            line-height: 1.6;
+            color: #050505;
+        }
+
+        /* FEATURED STATEMENT SECTION */
+        .featured-statement {
+            background: #0a0a0a;
+            padding: 8rem clamp(1.5rem, 5vw, 4rem);
+            text-align: center;
+        }
+
+        .featured-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.2;
+            font-style: italic;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            padding: 10rem clamp(1.5rem, 5vw, 4rem);
+            text-align: center;
+            background: #0a0a0a;
+        }
+
+        .cta-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 2rem;
+        }
+
+        .cta-body {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        /* =========================================
+           COMPREHENSIVE RESPONSIVE DESIGN
+           ========================================= */
+
+        /* Small Mobile Devices (320px - 480px) */
+        @media (max-width: 480px) {
+            .scene-hero {
+                height: 80vh;
+                padding: 4rem 1rem;
+            }
+            
+            .work-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                margin: 4rem 0;
+            }
+            
+            .work-card {
+                min-height: 320px;
+            }
+            
+            .work-image {
+                height: 180px;
+            }
+            
+            .work-content {
+                padding: 2rem 1.5rem;
+            }
+            
+            .work-category {
+                font-size: 0.6rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .work-title {
+                font-size: 1.4rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .work-description {
+                font-size: 0.9rem;
+                line-height: 1.5;
+                margin-bottom: 1.5rem;
+            }
+            
+            .work-cta {
+                font-size: 0.7rem;
+            }
+            
+            .process-section {
+                padding: 4rem 1rem;
+            }
+            
+            .process-timeline {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                margin: 3rem 0;
+            }
+            
+            .process-step {
+                padding: 1.5rem;
+            }
+            
+            .step-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1rem;
+                margin: 0 auto 1rem;
+            }
+            
+            .step-title {
+                font-size: 1.2rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .step-description {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+            
+            .featured-statement {
+                padding: 4rem 1rem;
+            }
+            
+            .featured-quote {
+                font-size: clamp(1.8rem, 6vw, 2.2rem);
+                line-height: 1.3;
+            }
+            
+            .cta-section {
+                padding: 6rem 1rem;
+            }
+            
+            .cta-title {
+                font-size: clamp(1.8rem, 6vw, 2.2rem);
+                margin-bottom: 1.5rem;
+            }
+            
+            .cta-body {
+                font-size: 1rem;
+                line-height: 1.5;
+                margin: 0 auto 2.5rem;
+            }
+        }
+
+        /* Standard Mobile (481px - 768px) */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .scene-hero {
+                height: 85vh;
+                padding: 5rem 1.5rem;
+            }
+            
+            .work-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                margin: 5rem 0;
+            }
+            
+            .work-card {
+                min-height: 360px;
+            }
+            
+            .work-image {
+                height: 200px;
+            }
+            
+            .work-content {
+                padding: 2.5rem 2rem;
+            }
+            
+            .work-category {
+                font-size: 0.65rem;
+                margin-bottom: 1rem;
+            }
+            
+            .work-title {
+                font-size: 1.6rem;
+                margin-bottom: 1rem;
+            }
+            
+            .work-description {
+                font-size: 1rem;
+                line-height: 1.6;
+                margin-bottom: 1.8rem;
+            }
+            
+            .work-cta {
+                font-size: 0.75rem;
+            }
+            
+            .process-section {
+                padding: 6rem 1.5rem;
+            }
+            
+            .process-timeline {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                margin: 3.5rem 0;
+            }
+            
+            .process-step {
+                padding: 1.8rem;
+            }
+            
+            .step-number {
+                width: 55px;
+                height: 55px;
+                font-size: 1.1rem;
+                margin: 0 auto 1.2rem;
+            }
+            
+            .step-title {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+            
+            .step-description {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+            
+            .featured-statement {
+                padding: 6rem 1.5rem;
+            }
+            
+            .featured-quote {
+                font-size: clamp(2rem, 5vw, 2.8rem);
+                line-height: 1.2;
+            }
+            
+            .cta-section {
+                padding: 8rem 1.5rem;
+            }
+            
+            .cta-title {
+                font-size: clamp(2rem, 5vw, 2.8rem);
+                margin-bottom: 1.8rem;
+            }
+            
+            .cta-body {
+                font-size: 1.1rem;
+                line-height: 1.6;
+                margin: 0 auto 2.8rem;
+            }
+        }
+
+        /* Tablets Portrait (769px - 1024px) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .scene-hero {
+                height: 90vh;
+                padding: 6rem 2rem;
+            }
+            
+            .work-grid {
+                grid-template-columns: 1fr;
+                gap: 3.5rem;
+                margin: 5.5rem 0;
+            }
+            
+            .work-card {
+                min-height: 380px;
+            }
+            
+            .work-image {
+                height: 220px;
+            }
+            
+            .work-content {
+                padding: 2.8rem 2.5rem;
+            }
+            
+            .work-title {
+                font-size: 1.8rem;
+            }
+            
+            .work-description {
+                font-size: 1.05rem;
+                line-height: 1.6;
+            }
+            
+            .process-section {
+                padding: 7rem 2rem;
+            }
+            
+            .process-timeline {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 3rem;
+                margin: 4rem 0;
+            }
+            
+            .process-step {
+                padding: 2rem;
+            }
+            
+            .step-number {
+                width: 58px;
+                height: 58px;
+                font-size: 1.15rem;
+            }
+            
+            .step-title {
+                font-size: 1.4rem;
+            }
+            
+            .step-description {
+                font-size: 1.05rem;
+            }
+            
+            .featured-statement {
+                padding: 7rem 2rem;
+            }
+            
+            .featured-quote {
+                font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+            }
+            
+            .cta-section {
+                padding: 9rem 2rem;
+            }
+            
+            .cta-title {
+                font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+            }
+            
+            .cta-body {
+                font-size: 1.15rem;
+                max-width: 550px;
+            }
+        }
+
+        /* Tablets Landscape & Small Laptops (1025px - 1440px) */
+        @media (min-width: 1025px) and (max-width: 1440px) {
+            .scene-hero {
+                height: 95vh;
+                padding: 7rem 3rem;
+            }
+            
+            .work-grid {
+                grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+                gap: 3.5rem;
+                margin: 6rem 0;
+            }
+            
+            .work-card {
+                min-height: 400px;
+            }
+            
+            .work-image {
+                height: 240px;
+            }
+            
+            .work-content {
+                padding: 3rem;
+            }
+            
+            .work-title {
+                font-size: 1.9rem;
+            }
+            
+            .work-description {
+                font-size: 1.05rem;
+            }
+            
+            .process-section {
+                padding: 8rem 3rem;
+            }
+            
+            .process-timeline {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2.5rem;
+                margin: 4rem 0;
+            }
+            
+            .process-step {
+                padding: 2rem;
+            }
+            
+            .step-number {
+                width: 60px;
+                height: 60px;
+                font-size: 1.2rem;
+            }
+            
+            .step-title {
+                font-size: 1.5rem;
+            }
+            
+            .featured-statement {
+                padding: 8rem 3rem;
+            }
+            
+            .featured-quote {
+                font-size: clamp(3rem, 4.5vw, 4rem);
+            }
+            
+            .cta-section {
+                padding: 10rem 3rem;
+            }
+            
+            .cta-title {
+                font-size: clamp(3rem, 4.5vw, 4rem);
+            }
+            
+            .cta-body {
+                font-size: 1.2rem;
+                max-width: 600px;
+            }
+        }
+
+        /* Large Desktops & Wide Screens (1441px+) */
+        @media (min-width: 1441px) {
+            .scene-hero {
+                height: 100vh;
+                padding: 8rem 4rem;
+            }
+            
+            .work-grid {
+                grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+                gap: 4rem;
+                margin: 6rem 0;
+            }
+            
+            .work-card {
+                min-height: 400px;
+            }
+            
+            .work-image {
+                height: 250px;
+            }
+            
+            .work-content {
+                padding: 3rem;
+            }
+            
+            .work-title {
+                font-size: 2rem;
+            }
+            
+            .process-section {
+                padding: 8rem 4rem;
+            }
+            
+            .process-timeline {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 3rem;
+                margin: 4rem 0;
+            }
+            
+            .process-step {
+                padding: 2rem;
+            }
+            
+            .step-number {
+                width: 60px;
+                height: 60px;
+                font-size: 1.2rem;
+            }
+            
+            .step-title {
+                font-size: 1.5rem;
+            }
+            
+            .featured-statement {
+                padding: 8rem 4rem;
+            }
+            
+            .featured-quote {
+                font-size: clamp(3.5rem, 5vw, 4rem);
+            }
+            
+            .cta-section {
+                padding: 10rem 4rem;
+            }
+            
+            .cta-title {
+                font-size: clamp(3.5rem, 5vw, 4rem);
+            }
+            
+            .cta-body {
+                font-size: 1.2rem;
+                max-width: 600px;
+            }
+        }
+
+        /* Legacy Support - RESPONSIVE */
+        @media (max-width: 900px) {
+            .work-grid { 
+                grid-template-columns: 1fr; 
+            }
+            .process-timeline { 
+                grid-template-columns: 1fr; 
+            }
+            .work-content { 
+                padding: 2rem; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Atmospheric Effects -->
+    <div class="scroll-progress"></div>
+    <div class="grain"></div>
+    <canvas id="dust-canvas"></canvas>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="scene-hero">
+            <div class="chapter-marker">Signals Made Visible</div>
+            <h1 class="display-xl split-text">
+                Where alignment<br>becomes <span class="gradient-text">form</span>.
+            </h1>
+            <p class="text-lead fade-up" style="margin-top: 3rem;">
+                Our work does not shout. It resonates.
+            </p>
+            <div class="micro-text fade-up">
+                Selected Work · Case Reflections
+            </div>
+        </section>
+
+        <!-- Intro Section -->
+        <section class="content-section">
+            <div class="chapter-marker">Before the Visuals</div>
+            <div class="editorial-copy fade-up">
+                <p>Every project begins in silence.</p>
+                <p>Listening comes first. Understanding follows. Form emerges last.</p>
+                <p><strong>What you see here is not decoration — it is the visible outcome of invisible alignment.</strong></p>
+            </div>
+        </section>
+
+        <!-- Work Grid Section -->
+        <section class="content-section">
+            <div class="chapter-marker">Selected Transmissions</div>
+            <h2 class="display-lg fade-up">Featured <span class="gradient-text">signals</span></h2>
+            
+            <div class="work-grid">
+                <div class="work-card fade-up">
+                    <div class="work-image" style="background-image: url('https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=2564&auto=format&fit=crop');"></div>
+                    <div class="work-content">
+                        <div class="work-category">BRAND IDENTITY · STRATEGY</div>
+                        <h3 class="work-title">A brand that remembered itself.</h3>
+                        <p class="work-description">A clarity-first repositioning designed to remove noise and reveal purpose.</p>
+                        <a href="#" class="work-cta">Explore the Signal →</a>
+                    </div>
+                </div>
+
+                <div class="work-card fade-up">
+                    <div class="work-image" style="background-image: url('https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2500&auto=format&fit=crop');"></div>
+                    <div class="work-content">
+                        <div class="work-category">DIGITAL EXPERIENCE · DESIGN</div>
+                        <h3 class="work-title">Interface as intention.</h3>
+                        <p class="work-description">A digital experience that guides without forcing, designed for understanding over engagement.</p>
+                        <a href="#" class="work-cta">Explore the Signal →</a>
+                    </div>
+                </div>
+
+                <div class="work-card fade-up">
+                    <div class="work-image" style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop');"></div>
+                    <div class="work-content">
+                        <div class="work-category">STRATEGY · POSITIONING</div>
+                        <h3 class="work-title">Structure for freedom.</h3>
+                        <p class="work-description">Strategic framework that enables authentic expression while maintaining market clarity.</p>
+                        <a href="#" class="work-cta">Explore the Signal →</a>
+                    </div>
+                </div>
+
+                <div class="work-card fade-up">
+                    <div class="work-image" style="background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2670&auto=format&fit=crop');"></div>
+                    <div class="work-content">
+                        <div class="work-category">BRAND IDENTITY · VISUAL SYSTEM</div>
+                        <h3 class="work-title">Sustainable growth.</h3>
+                        <p class="work-description">Identity system designed to evolve with purpose, not trends. Built for longevity over novelty.</p>
+                        <a href="#" class="work-cta">Explore the Signal →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="editorial-copy fade-up" style="text-align: center; font-style: italic; margin-top: 4rem;">
+                <p><strong>We don't design for attention. We design for recognition.</strong></p>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <div class="process-section">
+            <div class="content-section">
+                <div class="chapter-marker">How Work Is Shaped</div>
+                <h2 class="display-lg fade-up">The alignment <span class="gradient-text">process</span></h2>
+                
+                <div class="process-timeline">
+                    <div class="process-step fade-up">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Listening</h3>
+                        <p class="step-description">Understanding context, intent, and constraints.</p>
+                    </div>
+                    
+                    <div class="process-step fade-up">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Clarifying</h3>
+                        <p class="step-description">Defining what belongs — and what doesn't.</p>
+                    </div>
+                    
+                    <div class="process-step fade-up">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">Shaping</h3>
+                        <p class="step-description">Translating clarity into identity, systems, and experience.</p>
+                    </div>
+                    
+                    <div class="process-step fade-up">
+                        <div class="step-number">4</div>
+                        <h3 class="step-title">Releasing</h3>
+                        <p class="step-description">Letting the work speak without explanation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Philosophy Section -->
+        <section class="content-section">
+            <div class="chapter-marker">Why It Endures</div>
+            <div class="editorial-copy fade-up">
+                <p>Trends expire. Clarity remains.</p>
+                <p>Our work is designed to stay relevant beyond launch, beyond campaigns, beyond metrics.</p>
+                <p><strong>When alignment is real, time becomes an ally.</strong></p>
+            </div>
+        </section>
+
+        <!-- Featured Statement Section -->
+        <section class="featured-statement">
+            <div class="content-section" style="padding: 8rem var(--gutter); max-width: var(--site-width); margin: 0 auto;">
+                <div class="chapter-marker">Quiet Confidence</div>
+                <div class="featured-quote fade-up">
+                    The most powerful brands never have to <span class="gradient-text">explain</span> themselves.
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="chapter-marker">Begin the Alignment</div>
+            <h2 class="cta-title fade-up">Ready to become the <span class="gradient-text">signal</span>?</h2>
+            <div class="cta-body fade-up">
+                <p>You don't need more visibility. You need more clarity.</p>
+                <p><strong>When you're ready, we listen.</strong></p>
+            </div>
+            <a href="contact.html" class="btn-primary fade-up">Start the Conversation</a>
+        </section>
+    </main>
+
+</body>
+</html>

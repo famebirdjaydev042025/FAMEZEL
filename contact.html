@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - FAMEZEL | Get in Touch with Our Creative Team</title>
+    <meta name="description" content="Contact FAMEZEL for creative services, partnerships, and collaborations. Reach out to our team in Ahmedabad, Gujarat for branding, design, and digital solutions.">
+    <meta name="keywords" content="contact FAMEZEL, creative agency contact, Ahmedabad design studio, get in touch, creative services inquiry">
+    <meta name="author" content="FAMEZEL">
+    <meta property="og:title" content="Contact Us - FAMEZEL | Get in Touch with Our Creative Team">
+    <meta property="og:description" content="Contact FAMEZEL for creative services, partnerships, and collaborations. Reach out to our team in Ahmedabad, Gujarat.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://famezel.com/contact.html">
+    <meta property="og:image" content="https://famezel.com/assets/og-image-contact.jpg">
+    <link rel="canonical" href="https://famezel.com/contact.html">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact FAMEZEL",
+        "description": "Contact FAMEZEL for creative services, partnerships, and collaborations. Reach out to our team in Ahmedabad, Gujarat.",
+        "url": "https://famezel.com/contact.html",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "FAMEZEL",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "403, Rudram Icon, Opp. Lambda House, Gota",
+                "addressLocality": "Ahmedabad",
+                "addressRegion": "Gujarat",
+                "postalCode": "382481",
+                "addressCountry": "IN"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+91-91040-33621",
+                "contactType": "customer service",
+                "email": "hello@famezel.com",
+                "availableLanguage": ["English", "Hindi", "Gujarati"]
+            }
+        }
+    }
+    </script>
+    
+    <!-- Unified System -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Component System -->
+    <script src="components.js" defer></script>
+    <script src="common.js" defer></script>
+
+    <style>
+        /* Contact Page Specific Styles */
+        
+        /* HERO SECTION */
+        .scene-contact-hero { 
+            min-height: 90vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            padding: 8rem var(--gutter); 
+            position: relative; 
+        }
+
+        /* FORM SECTION (LIGHT) */
+        .scene-form { 
+            background-color: var(--light-bg); 
+            color: var(--dark-text); 
+            padding: 10rem var(--gutter); 
+            position: relative; 
+        }
+        
+        .form-container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            width: 100%; 
+        }
+        
+        .form-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 4rem; 
+            margin-top: 4rem; 
+        }
+        
+        .form-full { 
+            grid-column: span 2; 
+        }
+        
+        .form-group { 
+            position: relative; 
+            margin-bottom: 1rem; 
+        }
+        
+        .form-input { 
+            width: 100%; 
+            background: transparent; 
+            border: none; 
+            border-bottom: 1px solid rgba(0,0,0,0.2); 
+            padding: 1.5rem 0; 
+            font-family: var(--font-display); 
+            font-size: 1.8rem; 
+            outline: none; 
+            transition: 0.4s;
+            color: var(--dark-text); 
+            border-radius: 0;
+        }
+        
+        .form-input::placeholder { 
+            color: transparent; 
+        }
+        
+        .form-label { 
+            position: absolute; 
+            top: 1.5rem; 
+            left: 0; 
+            font-family: var(--font-mono); 
+            font-size: 0.8rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.1em; 
+            pointer-events: none; 
+            transition: 0.4s; 
+            opacity: 0.5; 
+        }
+        
+        .form-input:focus + .form-label, 
+        .form-input:not(:placeholder-shown) + .form-label { 
+            top: -0.5rem; 
+            font-size: 0.7rem; 
+            opacity: 1; 
+            color: #000; 
+        }
+        
+        .form-input:focus { 
+            border-bottom-color: #000; 
+        }
+
+        /* ANIMATED SEND BUTTON */
+        .send-btn {
+            background: var(--dark-bg); 
+            color: #fff; 
+            width: 100%; 
+            padding: 1.8rem; 
+            border: none;
+            font-family: var(--font-mono); 
+            text-transform: uppercase; 
+            letter-spacing: 0.3em; 
+            cursor: pointer; 
+            transition: 0.4s; 
+            margin-top: 4rem; 
+            position: relative; 
+            overflow: hidden;
+        }
+        
+        .send-btn::before {
+            content: ''; 
+            position: absolute; 
+            top: 0; 
+            left: -100%; 
+            width: 100%; 
+            height: 100%;
+            background: rgba(255,255,255,0.1); 
+            transform: skewX(-20deg); 
+            transition: 0.5s;
+        }
+        
+        .send-btn:hover { 
+            letter-spacing: 0.6em; 
+            background: #1a1a1a; 
+        }
+        
+        .send-btn:hover::before { 
+            left: 100%; 
+        }
+
+        /* MAP SECTION (DARK & INTERACTIVE) */
+        .scene-map { 
+            height: 90vh; 
+            position: relative; 
+            background: var(--dark-bg-alt); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            overflow: hidden;
+        }
+        
+        .map-wrapper { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+        }
+        
+        /* Dark Mode Map Hack */
+        .map-iframe { 
+            width: 100%; 
+            height: 100%; 
+            border: 0;
+            filter: grayscale(1) invert(1) contrast(1.2) brightness(0.8); 
+            opacity: 0.6; 
+            pointer-events: none; 
+        }
+        
+        .map-overlay {
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 100%);
+            z-index: 1; 
+            pointer-events: none;
+        }
+        
+        .map-content {
+            position: absolute; 
+            z-index: 4; 
+            text-align: center; 
+            bottom: 10%;
+            background: rgba(0,0,0,0.85); 
+            backdrop-filter: blur(10px); 
+            padding: 3rem; 
+            border: 1px solid rgba(255,255,255,0.1); 
+            max-width: 500px; 
+            width: 90%;
+        }
+        
+        .address-text { 
+            font-family: var(--font-body); 
+            opacity: 0.7; 
+            font-size: 1.1rem; 
+            line-height: 1.6; 
+            margin-top: 1rem; 
+            color: #fff; 
+        }
+
+        /* FAQ SECTION (LIGHT) */
+        .scene-faq { 
+            background-color: var(--light-bg); 
+            color: var(--dark-text); 
+            padding: 12rem var(--gutter); 
+        }
+        
+        .faq-list { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            border-top: 1px solid rgba(0,0,0,0.1); 
+        }
+        
+        .faq-item { 
+            border-bottom: 1px solid rgba(0,0,0,0.1); 
+            overflow: hidden; 
+        }
+        
+        .faq-question {
+            padding: 2.5rem 0; 
+            cursor: pointer; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            font-family: var(--font-display); 
+            font-size: clamp(1.5rem, 3vw, 2rem); 
+            transition: color 0.3s;
+        }
+        
+        .faq-question:hover { 
+            color: #555; 
+        }
+        
+        .faq-answer { 
+            height: 0; 
+            opacity: 0; 
+            transition: all 0.5s var(--ease-smooth); 
+            font-family: var(--font-body); 
+            font-size: 1.1rem; 
+            line-height: 1.6; 
+            max-width: 700px; 
+            padding-bottom: 0;
+        }
+        
+        .faq-item.active .faq-answer { 
+            height: auto; 
+            opacity: 0.7; 
+            padding-bottom: 2.5rem; 
+        }
+        
+        .faq-icon { 
+            font-family: var(--font-mono); 
+            font-size: 1.5rem; 
+            transition: transform 0.5s; 
+        }
+        
+        .faq-item.active .faq-icon { 
+            transform: rotate(45deg); 
+        }
+
+        /* VISION SECTION */
+        .scene-vision { 
+            height: 80vh; 
+            background: var(--dark-bg); 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            color: #fff; 
+            padding: 0 var(--gutter); 
+        }
+        
+        .social-grid { 
+            display: flex; 
+            gap: 3rem; 
+            margin-top: 4rem; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+        }
+        
+        .social-link { 
+            color: #fff; 
+            font-family: var(--font-mono); 
+            text-decoration: none; 
+            opacity: 0.5; 
+            transition: 0.3s; 
+            letter-spacing: 0.1em; 
+            text-transform: uppercase; 
+        }
+        
+        .social-link:hover { 
+            opacity: 1; 
+        }
+
+        /* =========================================
+           COMPREHENSIVE RESPONSIVE DESIGN
+           ========================================= */
+
+        /* Small Mobile Devices (320px - 480px) */
+        @media (max-width: 480px) {
+            .scene-contact-hero {
+                min-height: 80vh;
+                padding: 4rem 1rem;
+            }
+            
+            .scene-form {
+                padding: 4rem 1rem;
+            }
+            
+            .form-container {
+                max-width: 100%;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin-top: 2rem;
+            }
+            
+            .form-full {
+                grid-column: span 1;
+            }
+            
+            .form-input {
+                font-size: 1.2rem;
+                padding: 0.8rem 0;
+            }
+            
+            .form-label {
+                font-size: 0.65rem;
+                top: 0.8rem;
+            }
+            
+            .form-input:focus + .form-label,
+            .form-input:not(:placeholder-shown) + .form-label {
+                top: -0.4rem;
+                font-size: 0.6rem;
+            }
+            
+            .send-btn {
+                margin-top: 2.5rem;
+                padding: 1rem;
+                font-size: 0.8rem;
+                letter-spacing: 0.2em;
+            }
+            
+            .send-btn:hover {
+                letter-spacing: 0.4em;
+            }
+            
+            .scene-map {
+                height: 60vh;
+            }
+            
+            .map-content {
+                bottom: 0;
+                width: 100%;
+                max-width: 100%;
+                border: none;
+                border-top: 1px solid rgba(255,255,255,0.1);
+                padding: 1.5rem 1rem;
+                background: rgba(0,0,0,0.95);
+            }
+            
+            .address-text {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+            
+            .scene-faq {
+                padding: 4rem 1rem;
+            }
+            
+            .faq-question {
+                padding: 1.2rem 0;
+                font-size: 1.1rem;
+            }
+            
+            .faq-answer {
+                font-size: 0.95rem;
+                max-width: 100%;
+                padding-bottom: 1.5rem;
+            }
+            
+            .faq-icon {
+                font-size: 1.2rem;
+            }
+            
+            .scene-vision {
+                height: auto;
+                padding: 4rem 1rem;
+            }
+            
+            .social-grid {
+                gap: 1rem;
+                flex-direction: column;
+                margin-top: 2.5rem;
+            }
+            
+            .social-link {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Standard Mobile (481px - 768px) */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .scene-contact-hero {
+                min-height: 85vh;
+                padding: 5rem 1.5rem;
+            }
+            
+            .scene-form {
+                padding: 6rem 1.5rem;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                margin-top: 2.5rem;
+            }
+            
+            .form-full {
+                grid-column: span 1;
+            }
+            
+            .form-input {
+                font-size: 1.4rem;
+                padding: 1rem 0;
+            }
+            
+            .form-label {
+                font-size: 0.7rem;
+                top: 1rem;
+            }
+            
+            .form-input:focus + .form-label,
+            .form-input:not(:placeholder-shown) + .form-label {
+                top: -0.5rem;
+                font-size: 0.65rem;
+            }
+            
+            .send-btn {
+                margin-top: 3rem;
+                padding: 1.2rem;
+                font-size: 0.9rem;
+                letter-spacing: 0.25em;
+            }
+            
+            .send-btn:hover {
+                letter-spacing: 0.5em;
+            }
+            
+            .scene-map {
+                height: 70vh;
+            }
+            
+            .map-content {
+                bottom: 0;
+                width: 100%;
+                max-width: 100%;
+                border: none;
+                border-top: 1px solid rgba(255,255,255,0.1);
+                padding: 2rem 1.5rem;
+                background: rgba(0,0,0,0.95);
+            }
+            
+            .address-text {
+                font-size: 1.05rem;
+                line-height: 1.6;
+            }
+            
+            .scene-faq {
+                padding: 6rem 1.5rem;
+            }
+            
+            .faq-question {
+                padding: 1.5rem 0;
+                font-size: 1.3rem;
+            }
+            
+            .faq-answer {
+                font-size: 1rem;
+                max-width: 100%;
+                padding-bottom: 2rem;
+            }
+            
+            .faq-icon {
+                font-size: 1.3rem;
+            }
+            
+            .scene-vision {
+                height: auto;
+                padding: 6rem 1.5rem;
+            }
+            
+            .social-grid {
+                gap: 1.5rem;
+                flex-direction: column;
+                margin-top: 3rem;
+            }
+        }
+
+        /* Tablets Portrait (769px - 1024px) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .scene-contact-hero {
+                min-height: 88vh;
+                padding: 6rem 2rem;
+            }
+            
+            .scene-form {
+                padding: 8rem 2rem;
+            }
+            
+            .form-container {
+                max-width: 800px;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+                margin-top: 3.5rem;
+            }
+            
+            .form-full {
+                grid-column: span 2;
+            }
+            
+            .form-input {
+                font-size: 1.6rem;
+                padding: 1.3rem 0;
+            }
+            
+            .send-btn {
+                margin-top: 3.5rem;
+                padding: 1.5rem;
+                font-size: 0.95rem;
+            }
+            
+            .scene-map {
+                height: 85vh;
+            }
+            
+            .map-content {
+                bottom: 8%;
+                max-width: 450px;
+                padding: 2.5rem;
+            }
+            
+            .scene-faq {
+                padding: 8rem 2rem;
+            }
+            
+            .faq-question {
+                padding: 2rem 0;
+                font-size: 1.6rem;
+            }
+            
+            .faq-answer {
+                font-size: 1.05rem;
+                padding-bottom: 2.2rem;
+            }
+            
+            .scene-vision {
+                height: 75vh;
+                padding: 0 2rem;
+            }
+            
+            .social-grid {
+                gap: 2.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-top: 3.5rem;
+            }
+        }
+
+        /* Tablets Landscape & Small Laptops (1025px - 1440px) */
+        @media (min-width: 1025px) and (max-width: 1440px) {
+            .scene-contact-hero {
+                min-height: 90vh;
+                padding: 7rem 3rem;
+            }
+            
+            .scene-form {
+                padding: 9rem 3rem;
+            }
+            
+            .form-container {
+                max-width: 850px;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 3.5rem;
+                margin-top: 4rem;
+            }
+            
+            .form-input {
+                font-size: 1.7rem;
+                padding: 1.4rem 0;
+            }
+            
+            .send-btn {
+                margin-top: 4rem;
+                padding: 1.6rem;
+                font-size: 1rem;
+            }
+            
+            .scene-map {
+                height: 88vh;
+            }
+            
+            .map-content {
+                bottom: 10%;
+                max-width: 480px;
+                padding: 2.8rem;
+            }
+            
+            .scene-faq {
+                padding: 10rem 3rem;
+            }
+            
+            .faq-question {
+                padding: 2.2rem 0;
+                font-size: 1.8rem;
+            }
+            
+            .faq-answer {
+                font-size: 1.1rem;
+                padding-bottom: 2.5rem;
+            }
+            
+            .scene-vision {
+                height: 78vh;
+                padding: 0 3rem;
+            }
+            
+            .social-grid {
+                gap: 2.8rem;
+                margin-top: 4rem;
+            }
+        }
+
+        /* Large Desktops & Wide Screens (1441px+) */
+        @media (min-width: 1441px) {
+            .scene-contact-hero {
+                min-height: 90vh;
+                padding: 8rem 4rem;
+            }
+            
+            .scene-form {
+                padding: 10rem 4rem;
+            }
+            
+            .form-container {
+                max-width: 900px;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 4rem;
+                margin-top: 4rem;
+            }
+            
+            .form-input {
+                font-size: 1.8rem;
+                padding: 1.5rem 0;
+            }
+            
+            .send-btn {
+                margin-top: 4rem;
+                padding: 1.8rem;
+                font-size: 1rem;
+            }
+            
+            .scene-map {
+                height: 90vh;
+            }
+            
+            .map-content {
+                bottom: 10%;
+                max-width: 500px;
+                padding: 3rem;
+            }
+            
+            .scene-faq {
+                padding: 12rem 4rem;
+            }
+            
+            .faq-question {
+                padding: 2.5rem 0;
+                font-size: 2rem;
+            }
+            
+            .faq-answer {
+                font-size: 1.1rem;
+                padding-bottom: 2.5rem;
+            }
+            
+            .scene-vision {
+                height: 80vh;
+                padding: 0 4rem;
+            }
+            
+            .social-grid {
+                gap: 3rem;
+                margin-top: 4rem;
+            }
+        }
+
+        /* Legacy Support - Tablet & Mobile Styles */
+        @media (max-width: 1024px) {
+            .scene-form, .scene-faq { 
+                padding: 6rem var(--gutter); 
+            }
+            .form-grid { 
+                gap: 2rem; 
+                margin-top: 3rem; 
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Form Stacking */
+            .form-grid { 
+                grid-template-columns: 1fr; 
+                margin-top: 2rem; 
+                gap: 2rem; 
+            }
+            .form-full { 
+                grid-column: span 1; 
+            }
+            .form-input { 
+                font-size: 1.4rem; 
+                padding: 1rem 0; 
+            }
+            .send-btn { 
+                margin-top: 3rem; 
+                padding: 1.2rem; 
+                font-size: 0.9rem; 
+            }
+
+            /* Map Content */
+            .map-content { 
+                bottom: 0; 
+                width: 100%; 
+                max-width: 100%; 
+                border: none; 
+                border-top: 1px solid rgba(255,255,255,0.1); 
+                padding: 2rem 1.5rem; 
+                background: rgba(0,0,0,0.95);
+            }
+            .scene-map { 
+                height: 70vh; 
+            }
+
+            /* FAQ */
+            .faq-question { 
+                padding: 1.5rem 0; 
+                font-size: 1.3rem; 
+            }
+            .faq-answer { 
+                font-size: 1rem; 
+                max-width: 100%; 
+            }
+            .scene-faq { 
+                padding: 6rem var(--gutter); 
+            }
+
+            /* Vision / Footer */
+            .scene-vision { 
+                height: auto; 
+                padding: 6rem var(--gutter); 
+            }
+            .social-grid { 
+                gap: 1.5rem; 
+                flex-direction: column; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- Hero Section -->
+        <section class="scene-contact-hero">
+            <div class="chapter-marker">Chapter 01 — Contact</div>
+            <h1 class="display-xl split-text">We Can't Wait To<br>Hear From You.</h1>
+            <div class="text-lead fade-up" style="margin-top: 2rem;">
+                <p>Reach out to learn how Famezel For Freedom can help you create new growth, unlock your voice, and build without limits.</p>
+            </div>
+            <a href="#form-zone" class="btn-primary fade-up">Get in Touch</a>
+        </section>
+
+        <!-- Form Section -->
+        <div class="light-section" id="form-zone">
+            <section class="scene-form">
+                <div class="form-container">
+                    <div class="chapter-marker" style="color: var(--dark-text); border-color: var(--dark-text);">Chapter 02 — The Conversation</div>
+                    <h2 class="display-lg" style="margin-bottom: 2rem;">Start the Conversation</h2>
+                    
+                    <form>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <input type="text" class="form-input" placeholder=" " required>
+                                <label class="form-label">Full Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-input" placeholder=" " required>
+                                <label class="form-label">Email Address</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" class="form-input" placeholder=" ">
+                                <label class="form-label">Phone Number (Optional)</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-input" placeholder=" " required>
+                                <label class="form-label">Subject</label>
+                            </div>
+                            <div class="form-group form-full">
+                                <textarea class="form-input" placeholder=" " style="resize: none; height: 100px;" required></textarea>
+                                <label class="form-label">Your Message</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="send-btn">Send Message</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+        <!-- Map Section -->
+        <section class="scene-map">
+            <div class="map-wrapper">
+                <iframe 
+                    class="map-iframe"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.5358686641973!2d72.53181831496877!3d23.077471984925343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e83492723c6d3%3A0x7e7c6b9070f8007!2sRudram%20Icon!5e0!3m2!1sen!2sin!4v1678888888888!5m2!1sen!2sin"
+                    allowfullscreen="" loading="lazy">
+                </iframe>
+                <div class="map-overlay"></div>
+            </div>
+            
+            <div class="map-content">
+                <div class="chapter-marker">Chapter 03 — Location</div>
+                <h2 class="display-lg" style="color: #fff;">Where We Create From</h2>
+                <div class="address-text">
+                    Headquarters:<br>
+                    <strong>Rudram Icon, 403</strong><br>
+                    Opp. Lambda House, Gota<br>
+                    Ahmedabad, Gujarat 382481
+                </div>
+                <a href="https://goo.gl/maps/xyz" target="_blank" class="btn-primary" style="margin-top: 2rem; display: inline-block;">Open in Maps</a>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <div class="light-section">
+            <section class="scene-faq">
+                <div class="container" style="max-width: 1000px; margin: 0 auto;">
+                    <div class="chapter-marker" style="color: var(--dark-text); border-color: var(--dark-text);">Chapter 04 — FAQ</div>
+                    <h2 class="display-lg" style="margin-bottom: 4rem;">Frequently Asked Questions</h2>
+                    
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How long does it take to hear back?</span>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                We typically respond within 24–48 hours. We value every transmission and ensure it reaches the right team member.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Do you work with individuals?</span>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                Yes. We work with individuals, creators, startups, and purpose-driven organizations. Freedom is for everyone.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Can I partner with Famezel?</span>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                Absolutely. If your values align with freedom, creativity, and impact, we'd love to explore collaboration opportunities.
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Is this a global community?</span>
+                                <span class="faq-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                                100%. Famezel For Freedom connects voices across borders, creating a unified network of creative expression.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Vision Section -->
+        <section class="scene-vision">
+            <div class="chapter-marker">Chapter 05 — Stay Connected</div>
+            <h2 class="display-xl split-text">Freedom doesn't end<br>with one message.</h2>
+            <div style="margin-top: 3rem;">
+                <p class="text-lead">It's the beginning of something meaningful. Let's build freedom — together.</p>
+                <div class="social-grid">
+                    <a href="#" class="social-link">Instagram</a>
+                    <a href="#" class="social-link">LinkedIn</a>
+                    <a href="#" class="social-link">X (Twitter)</a>
+                    <a href="#" class="social-link">YouTube</a>
+                </div>
+            </div>
+            <div style="margin-top: 8rem; font-size: 0.7rem; opacity: 0.3; font-family: var(--font-mono);">© 2026 FAMEZEL</div>
+        </section>
+    </main>
+
+    <!-- Contact Page Specific JavaScript -->
+    <script>
+        // FAQ Accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

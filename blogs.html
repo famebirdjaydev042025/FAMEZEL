@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal - FAMEZEL | Reflections on Clarity & Design</title>
+    <meta name="description" content="A thoughtful journal exploring ideas on branding, design, alignment, and growth. Reflective insights from FAMEZEL on clarity-driven creative work.">
+    <meta name="keywords" content="FAMEZEL journal, design reflections, creative insights, branding thoughts, clarity-driven design">
+    <meta name="author" content="FAMEZEL">
+    <meta property="og:title" content="Journal - FAMEZEL | Reflections on Clarity & Design">
+    <meta property="og:description" content="A thoughtful journal exploring ideas on branding, design, alignment, and growth.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://famezel.com/blogs.html">
+    <link rel="canonical" href="https://famezel.com/blogs.html">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@100;400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    
+    <!-- Unified System -->
+    <script src="common.js" defer></script>
+    
+    <!-- Component System -->
+    <script src="components.js" defer></script>
+
+    <style>
+        /* =========================================
+           FAMEZEL JOURNAL - EDITORIAL DESIGN
+           ========================================= */
+        
+        :root {
+            /* FAMEZEL Core Design System */
+            --c-void: #050505;
+            --c-void-depth: #0a0a0a;
+            --c-paper: #F2F2F2;
+            --c-ink: #050505;
+            --c-accent: #ee2a7b;
+            
+            /* The Exact Instagram Creator Gradient */
+            --ig-gradient: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+            --ig-gradient-glow: linear-gradient(45deg, rgba(249, 206, 52, 0.3), rgba(238, 42, 123, 0.3), rgba(98, 40, 215, 0.3));
+            
+            --f-header: 'Cormorant Garamond', serif;
+            --f-body: 'Inter', sans-serif;
+            --f-tech: 'JetBrains Mono', monospace;
+            
+            --ease-cinematic: cubic-bezier(0.19, 1, 0.22, 1);
+            --site-width: 1400px;
+            --gutter: clamp(1.5rem, 5vw, 4rem);
+            --z-header: 10000;
+            --z-cursor: 11000;
+            
+            /* Editorial Color Palette */
+            --bg-primary: #0a0a0b;
+            --bg-secondary: #111113;
+            --text-primary: #f8f9fa;
+            --text-secondary: #a8a9aa;
+            --text-muted: #6c6d6e;
+            
+            /* Soft Premium Gradients */
+            --gradient-primary: linear-gradient(135deg, #7dd3fc 0%, #c084fc 35%, #fbbf24 100%);
+            --gradient-secondary: linear-gradient(120deg, #38bdf8 0%, #a855f7 50%, #f59e0b 100%);
+            --gradient-accent: linear-gradient(90deg, #06b6d4 0%, #8b5cf6 50%, #f97316 100%);
+            
+            /* Typography */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-editorial: 'Crimson Text', Georgia, serif;
+            --font-display: 'Cormorant Garamond', serif;
+            
+            /* Spacing & Layout */
+            --container-max: 1400px;
+            --section-padding: clamp(6rem, 12vw, 12rem);
+            --content-padding: clamp(1.5rem, 4vw, 3rem);
+            
+            /* Effects */
+            --blur-subtle: blur(0.5px);
+            --blur-medium: blur(8px);
+            --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.12);
+            --shadow-floating: 0 16px 64px rgba(0, 0, 0, 0.16);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Ensure navbar compatibility */
+        body {
+            background-color: var(--c-void);
+            color: var(--c-paper);
+            font-family: var(--f-body);
+        }
+
+        /* Subtle Background Texture */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(125, 211, 252, 0.02) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(192, 132, 252, 0.015) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(251, 191, 36, 0.015) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Grain Texture - FAMEZEL Style */
+        .grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        /* Container */
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--content-padding);
+        }
+
+        /* =========================================
+           HERO SECTION - JOURNAL INTRODUCTION
+           ========================================= */
+        
+        .hero-section {
+            padding: var(--section-padding) 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-label {
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .hero-headline {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 300;
+            line-height: 0.9;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .hero-text {
+            font-family: var(--font-editorial);
+            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            max-width: 700px;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        /* =========================================
+           FEATURED POST SECTION
+           ========================================= */
+        
+        .featured-section {
+            padding: var(--section-padding) 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .featured-post {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .featured-content {
+            order: 1;
+        }
+
+        .featured-image {
+            order: 2;
+            aspect-ratio: 4/3;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(0.3) contrast(0.9);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .featured-image:hover img {
+            filter: grayscale(0) contrast(1.05);
+            transform: scale(1.02);
+        }
+
+        .featured-meta {
+            font-size: 0.875rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .featured-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .featured-excerpt {
+            font-family: var(--font-editorial);
+            font-size: 1.125rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+        }
+
+        .featured-link {
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(--text-primary);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .featured-link:hover {
+            border-bottom-color: var(--text-primary);
+        }
+
+        /* =========================================
+           JOURNAL ENTRIES GRID
+           ========================================= */
+        
+        .entries-section {
+            padding: var(--section-padding) 0;
+        }
+
+        .section-intro {
+            max-width: 600px;
+            margin-bottom: 6rem;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-description {
+            font-family: var(--font-editorial);
+            font-size: 1.125rem;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .entries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 4rem 3rem;
+        }
+
+        .entry-card {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .entry-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .entry-image {
+            aspect-ratio: 16/10;
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .entry-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(0.4) contrast(0.9);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .entry-card:hover .entry-image img {
+            filter: grayscale(0.1) contrast(1.05);
+            transform: scale(1.02);
+        }
+
+        .entry-meta {
+            font-size: 0.8rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .entry-date {
+            color: var(--text-muted);
+        }
+
+        .entry-reading-time {
+            color: var(--text-muted);
+            position: relative;
+        }
+
+        .entry-reading-time::before {
+            content: '·';
+            position: absolute;
+            left: -0.6rem;
+            color: var(--text-muted);
+        }
+
+        .entry-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .entry-excerpt {
+            font-size: 1rem;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .entry-link {
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(--text-primary);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .entry-link:hover {
+            border-bottom-color: var(--text-primary);
+        }
+
+        /* =========================================
+           REFLECTION SECTION
+           ========================================= */
+        
+        .reflection-section {
+            background: var(--c-paper);
+            color: var(--c-ink);
+            padding: var(--section-padding) 0;
+        }
+
+        .reflection-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .reflection-quote {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 300;
+            line-height: 1.3;
+            font-style: italic;
+            color: var(--c-ink);
+            margin-bottom: 2rem;
+        }
+
+        .reflection-attribution {
+            font-size: 0.875rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            color: rgba(5, 5, 5, 0.6);
+        }
+
+        /* =========================================
+           SCROLL PROGRESS INDICATOR
+           ========================================= */
+        
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: var(--ig-gradient);
+            z-index: var(--z-header);
+            transition: width 0.1s ease;
+        }
+
+        /* =========================================
+           RESPONSIVE DESIGN
+           ========================================= */
+        
+        @media (max-width: 1024px) {
+            .featured-post {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .featured-content {
+                order: 2;
+            }
+
+            .featured-image {
+                order: 1;
+            }
+
+            .entries-grid {
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                gap: 3rem 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: clamp(4rem, 8vw, 8rem);
+                --content-padding: 1.5rem;
+            }
+
+            .hero-headline {
+                font-size: clamp(2.5rem, 10vw, 4rem);
+                margin-bottom: 2rem;
+            }
+
+            .hero-text {
+                font-size: clamp(1.125rem, 4vw, 1.25rem);
+            }
+
+            .featured-post {
+                gap: 2rem;
+            }
+
+            .featured-title {
+                font-size: clamp(1.75rem, 6vw, 2.5rem);
+            }
+
+            .featured-excerpt {
+                font-size: 1rem;
+            }
+
+            .entries-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .entry-image {
+                margin-bottom: 1.5rem;
+            }
+
+            .entry-title {
+                font-size: 1.25rem;
+            }
+
+            .reflection-quote {
+                font-size: clamp(1.5rem, 6vw, 2rem);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grain"></div>
+    <div class="scroll-progress"></div>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-label">journal</div>
+                <h1 class="hero-headline">Thoughts on clarity</h1>
+                <p class="hero-text">
+                    A collection of reflections on branding, design, alignment, and growth. 
+                    These are not articles—they are moments of understanding, shared.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED POST SECTION -->
+    <section class="featured-section">
+        <div class="container">
+            <div class="featured-post">
+                <div class="featured-content">
+                    <div class="featured-meta">Latest reflection · 8 min read · Dec 2024</div>
+                    <h2 class="featured-title">The space between intention and expression</h2>
+                    <p class="featured-excerpt">
+                        There exists a quiet moment between knowing what you want to say and finding the way to say it. 
+                        This space—often uncomfortable, always necessary—is where authentic brands are born. 
+                        It's not about perfection; it's about patience with the process of becoming clear.
+                    </p>
+                    <a href="#" class="featured-link">Continue reading</a>
+                </div>
+                <div class="featured-image">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=600&fit=crop&auto=format&q=80" 
+                         alt="Abstract architectural forms" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JOURNAL ENTRIES SECTION -->
+    <section class="entries-section">
+        <div class="container">
+            <div class="section-intro">
+                <div class="section-label">recent entries</div>
+                <h2 class="section-title">Earlier reflections</h2>
+                <p class="section-description">
+                    Each piece emerges from practice, not theory. Ideas tested in the real work of building brands that matter.
+                </p>
+            </div>
+
+            <div class="entries-grid">
+                <article class="entry-card">
+                    <div class="entry-image">
+                        <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=600&h=375&fit=crop&auto=format&q=80" 
+                             alt="Minimalist design elements" loading="lazy">
+                    </div>
+                    <div class="entry-meta">
+                        <span class="entry-date">Nov 2024</span>
+                        <span class="entry-reading-time">6 min read</span>
+                    </div>
+                    <h3 class="entry-title">When less becomes more</h3>
+                    <p class="entry-excerpt">
+                        Restraint in design isn't about removing elements—it's about understanding which elements serve the deeper purpose. 
+                        A meditation on the courage required to say no.
+                    </p>
+                    <a href="#" class="entry-link">Read reflection</a>
+                </article>
+
+                <article class="entry-card">
+                    <div class="entry-image">
+                        <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?w=600&h=375&fit=crop&auto=format&q=80" 
+                             alt="Natural textures and patterns" loading="lazy">
+                    </div>
+                    <div class="entry-meta">
+                        <span class="entry-date">Oct 2024</span>
+                        <span class="entry-reading-time">5 min read</span>
+                    </div>
+                    <h3 class="entry-title">Listening before speaking</h3>
+                    <p class="entry-excerpt">
+                        The best brand strategies begin in silence. Before we can help others find their voice, 
+                        we must first understand the conversation they're joining.
+                    </p>
+                    <a href="#" class="entry-link">Read reflection</a>
+                </article>
+
+                <article class="entry-card">
+                    <div class="entry-image">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&h=375&fit=crop&auto=format&q=80" 
+                             alt="Geometric shadows and light" loading="lazy">
+                    </div>
+                    <div class="entry-meta">
+                        <span class="entry-date">Sep 2024</span>
+                        <span class="entry-reading-time">7 min read</span>
+                    </div>
+                    <h3 class="entry-title">The weight of simplicity</h3>
+                    <p class="entry-excerpt">
+                        Simple is not easy. It requires the discipline to distill complex ideas into their essential truth. 
+                        Why the hardest work often looks effortless.
+                    </p>
+                    <a href="#" class="entry-link">Read reflection</a>
+                </article>
+
+                <article class="entry-card">
+                    <div class="entry-image">
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=375&fit=crop&auto=format&q=80" 
+                             alt="Organic forms and structures" loading="lazy">
+                    </div>
+                    <div class="entry-meta">
+                        <span class="entry-date">Aug 2024</span>
+                        <span class="entry-reading-time">4 min read</span>
+                    </div>
+                    <h3 class="entry-title">Growth through constraint</h3>
+                    <p class="entry-excerpt">
+                        Boundaries don't limit creativity—they focus it. How working within constraints can lead to 
+                        breakthrough thinking and authentic expression.
+                    </p>
+                    <a href="#" class="entry-link">Read reflection</a>
+                </article>
+
+                <article class="entry-card">
+                    <div class="entry-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=375&fit=crop&auto=format&q=80" 
+                             alt="Abstract composition" loading="lazy">
+                    </div>
+                    <div class="entry-meta">
+                        <span class="entry-date">Jul 2024</span>
+                        <span class="entry-reading-time">6 min read</span>
+                    </div>
+                    <h3 class="entry-title">The courage to be specific</h3>
+                    <p class="entry-excerpt">
+                        Generic appeals to everyone and connects with no one. Why the brands that matter most 
+                        are willing to be misunderstood by some to be deeply understood by others.
+                    </p>
+                    <a href="#" class="entry-link">Read reflection</a>
+                </article>
+
+                <article class="entry-card">
+                    <div class="entry-image">
+                        <img src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=600&h=375&fit=crop&auto=format&q=80" 
+                             alt="Architectural details" loading="lazy">
+                    </div>
+                    <div class="entry-meta">
+                        <span class="entry-date">Jun 2024</span>
+                        <span class="entry-reading-time">5 min read</span>
+                    </div>
+                    <h3 class="entry-title">Building for the long view</h3>
+                    <p class="entry-excerpt">
+                        Trends fade, but principles endure. Thoughts on creating brand foundations that strengthen 
+                        over time rather than requiring constant renovation.
+                    </p>
+                    <a href="#" class="entry-link">Read reflection</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- REFLECTION SECTION -->
+    <section class="reflection-section">
+        <div class="container">
+            <div class="reflection-content">
+                <blockquote class="reflection-quote">
+                    "The best ideas don't need explanation. They need expression."
+                </blockquote>
+                <div class="reflection-attribution">— From our practice</div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // =========================================
+        // PREMIUM JOURNAL INTERACTIONS
+        // =========================================
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize GSAP
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Initialize Lenis for smooth scrolling
+            const lenis = new Lenis({
+                duration: 2.0,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                smooth: true
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+
+            // GSAP + Lenis integration
+            lenis.on('scroll', ScrollTrigger.update);
+            gsap.ticker.add((time) => {
+                lenis.raf(time * 1000);
+            });
+            gsap.ticker.lagSmoothing(0);
+
+            // =========================================
+            // HERO ANIMATIONS - SLOW & THOUGHTFUL
+            // =========================================
+            
+            const tl = gsap.timeline({ delay: 0.8 });
+            
+            tl.to('.hero-label', {
+                opacity: 1,
+                y: 0,
+                duration: 1.2,
+                ease: "power2.out"
+            })
+            .to('.hero-headline', {
+                opacity: 1,
+                y: 0,
+                duration: 1.4,
+                ease: "power2.out"
+            }, "-=0.6")
+            .to('.hero-text', {
+                opacity: 1,
+                y: 0,
+                duration: 1.0,
+                ease: "power2.out"
+            }, "-=0.8");
+
+            // =========================================
+            // FEATURED POST ANIMATION
+            // =========================================
+            
+            gsap.to('.featured-post', {
+                opacity: 1,
+                y: 0,
+                duration: 1.2,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: '.featured-post',
+                    start: "top 80%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+
+            // =========================================
+            // SECTION INTRO ANIMATION
+            // =========================================
+            
+            gsap.to('.section-intro', {
+                opacity: 1,
+                y: 0,
+                duration: 1.0,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: '.section-intro',
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+
+            // =========================================
+            // ENTRY CARDS STAGGERED ANIMATION
+            // =========================================
+            
+            const entryCards = document.querySelectorAll('.entry-card');
+            
+            entryCards.forEach((card, index) => {
+                gsap.to(card, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1.0,
+                    delay: index * 0.15,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 85%",
+                        toggleActions: "play none none reverse"
+                    }
+                });
+
+                // Subtle hover parallax
+                card.addEventListener('mouseenter', () => {
+                    gsap.to(card, {
+                        y: -4,
+                        duration: 0.6,
+                        ease: "power2.out"
+                    });
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, {
+                        y: 0,
+                        duration: 0.6,
+                        ease: "power2.out"
+                    });
+                });
+            });
+
+            // =========================================
+            // REFLECTION SECTION ANIMATION
+            // =========================================
+            
+            gsap.to('.reflection-content', {
+                opacity: 1,
+                y: 0,
+                duration: 1.2,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: '.reflection-content',
+                    start: "top 80%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+
+            // =========================================
+            // SCROLL PROGRESS
+            // =========================================
+            
+            gsap.to('.scroll-progress', {
+                width: '100%',
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "body",
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 0.3
+                }
+            });
+
+            // =========================================
+            // SUBTLE PARALLAX FOR IMAGES
+            // =========================================
+            
+            const images = document.querySelectorAll('.entry-image img, .featured-image img');
+            
+            images.forEach(img => {
+                gsap.to(img, {
+                    y: -30,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: img.closest('.entry-image, .featured-image'),
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: 1
+                    }
+                });
+            });
+
+            console.log('✨ Premium Journal page initialized');
+        });
+    </script>
+</body>
+</html>
