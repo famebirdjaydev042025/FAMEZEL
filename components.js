@@ -56,8 +56,8 @@ async function loadComponents() {
         // Load complete HTML components (containing HTML, CSS, and JS)
         console.log('📄 Loading complete component files...');
         const [navbarHTML, footerHTML] = await Promise.all([
-            loadHTML('components/navbar.html'),
-            loadHTML('components/footer.html')
+            loadHTML('/navbar.html'),
+            loadHTML('/footer.html')
         ]);
         console.log('✅ Component files loaded successfully');
 
