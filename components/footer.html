@@ -1,0 +1,503 @@
+<style>
+/* =========================================
+   FOOTER COMPONENT STYLES
+   ========================================= */
+
+.footer {
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+    background-color: var(--c-void);
+    color: var(--c-paper);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: var(--f-body);
+    overflow: hidden;
+}
+
+/* MARQUEE SECTION - INFINITE SCROLL */
+.footer-marquee {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 0;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+}
+
+.marquee-track {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee 30s linear infinite;
+    will-change: transform;
+}
+
+.marquee-track span {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    padding-right: 50px;
+    color: var(--c-paper);
+    flex-shrink: 0;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Pause on hover for better UX */
+.footer-marquee:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+/* CONTAINER & GRID */
+.footer-container {
+    padding: 80px 5% 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 90%;
+    flex-grow: 1;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 1.2fr 1.5fr 1.2fr 2fr 0.5fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.footer-label {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 30px;
+}
+
+/* LINKS & CONTACT */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: var(--c-paper);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 300;
+    transition: all 0.6s var(--ease-cinematic);
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    background: var(--ig-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: translateX(8px);
+}
+
+.contact-detail {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--c-paper);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    transition: all 0.6s var(--ease-cinematic);
+}
+
+.contact-detail:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* TIME & STATUS */
+#local-time {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.status-dot-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    color: #00ff00;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: #00ff00;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00ff00;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+/* MAP STYLING */
+.map-wrapper {
+    width: 100%;
+    height: 160px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    filter: grayscale(1) invert(0.92) contrast(1.1);
+    transition: all 0.6s var(--ease-cinematic);
+    background: #111;
+}
+
+.map-wrapper:hover {
+    filter: grayscale(0.2) invert(0.92) contrast(1.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* LOGO & FILL EFFECT */
+.footer-bottom {
+    padding: 0 5% 40px;
+}
+
+.footer-logo {
+    font-family: var(--f-header);
+    font-size: clamp(2.5rem, 6.8vw, 6.5rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: transparent;
+    -webkit-text-stroke: 1.2px #ffffff;
+    margin: 0;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.footer-logo:hover {
+    background: var(--ig-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-text-stroke: 0px transparent;
+    filter: drop-shadow(0 0 20px rgba(249, 206, 52, 0.5)) 
+            drop-shadow(0 0 40px rgba(238, 42, 123, 0.3)) 
+            drop-shadow(0 0 60px rgba(98, 40, 215, 0.2));
+    transform: scale(1.02);
+}
+
+.footer-legal {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 20px;
+}
+
+.back-to-top {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: all 0.6s var(--ease-cinematic);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: var(--f-body);
+}
+
+.back-to-top:hover {
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* REVEAL ANIMATION */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s ease-out;
+}
+
+.reveal-item.active {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* =========================================
+   RESPONSIVE FOOTER SYSTEM
+   ========================================= */
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .footer {
+        min-height: auto;
+    }
+    
+    .footer-marquee {
+        padding: 14px 0;
+    }
+    
+    .marquee-track span {
+        font-size: 11px;
+        letter-spacing: 2px;
+        padding-right: 30px;
+    }
+    
+    .footer-container {
+        padding: 60px 6% 40px;
+        width: 100%;
+    }
+    
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .footer-links a {
+        font-size: 16px;
+    }
+    
+    .footer-links a:hover {
+        transform: none;
+    }
+    
+    .contact-detail {
+        font-size: 16px;
+    }
+    
+    #local-time {
+        font-size: 1.3rem;
+    }
+    
+    .status-dot-wrap {
+        font-size: 10px;
+    }
+    
+    .map-wrapper {
+        height: 140px;
+    }
+    
+    .footer-bottom {
+        padding: 0 6% 30px;
+    }
+    
+    .footer-logo {
+        font-size: clamp(2.2rem, 10vw, 3.8rem);
+        white-space: normal;
+        text-align: left;
+    }
+    
+    .footer-legal {
+        flex-direction: column;
+        gap: 0.6rem;
+        align-items: flex-start;
+        font-size: 10px;
+    }
+    
+    /* Disable hover effects on mobile */
+    .footer-logo:hover,
+    .footer-links a:hover,
+    .map-wrapper:hover,
+    .back-to-top:hover {
+        transform: none;
+        filter: none;
+        background: none;
+    }
+}
+</style>
+
+<footer class="footer">
+    <div class="footer-marquee">
+        <div class="marquee-track">
+            <span>Famezel For Freedom • Designed for Clarity • Global / Remote • Famezel For Freedom • Designed for
+                Clarity • Global / Remote • </span>
+            <span>Famezel For Freedom • Designed for Clarity • Global / Remote • Famezel For Freedom • Designed for
+                Clarity • Global / Remote • </span>
+        </div>
+    </div>
+
+    <div class="footer-container">
+        <div class="footer-top">
+            <div class="footer-col reveal-item">
+                <span class="footer-label">Navigation</span>
+                <ul class="footer-links">
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="blogs.html">Blogs</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <span class="footer-label" style="margin-top: 2rem;">Legal</span>
+                <ul class="footer-links">
+                    <li><a href="privacy-policy.html" style="font-size: 14px;">Privacy Policy</a></li>
+                    <li><a href="terms-conditions.html" style="font-size: 14px;">Terms & Conditions</a></li>
+                    <li><a href="cookie-policy.html" style="font-size: 14px;">Cookie Policy</a></li>
+                    <li><a href="disclaimer.html" style="font-size: 14px;">Disclaimer</a></li>
+                    <li><a href="refund-policy.html" style="font-size: 14px;">Refund Policy</a></li>
+                    <li><a href="sitemap.html" style="font-size: 14px;">Sitemap</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col reveal-item">
+                <span class="footer-label">Get in Touch</span>
+                <a href="mailto:hello@famezel.com" class="contact-detail">hello@famezel.com</a>
+                <a href="tel:+910000000000" class="contact-detail">+91 91040 33621</a>
+                <div style="margin-top: 20px;">
+                    <ul class="footer-links">
+                        <li><a href="#" style="font-size: 14px;">Instagram</a></li>
+                        <li><a href="#" style="font-size: 14px;">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-col reveal-item">
+                <span class="footer-label">Availability</span>
+                <div class="status-box">
+                    <span id="local-time">00:00:00</span>
+                    <div class="status-dot-wrap">
+                        <span class="dot"></span> OPEN FOR PROJECTS
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-col reveal-item">
+                <span class="footer-label">Studio Location</span>
+                <div class="map-wrapper">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.3344654922114!2d72.53177657593652!3d23.084897914013446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e83002579df67%3A0x67313331a986259c!2sRudram%20Icon!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin&q=Rudram+icon+Gota+Ahmedabad"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+                <p
+                    style="font-size: 10px; color: var(--accent); margin-top: 10px; line-height: 1.4; text-transform: uppercase;">
+                    403, Rudram Icon, Opp. Lambda House,<br>Gota, Ahmedabad 382481
+                </p>
+            </div>
+
+            <div class="footer-col reveal-item" style="display: flex; justify-content: flex-end;">
+                <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    ↑
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom reveal-item">
+        <h2 class="footer-logo">Famezel | For Freedom</h2>
+        <div class="footer-legal">
+            <span>© 2026 EDITION</span>
+            <span>ALL RIGHTS RESERVED</span>
+            <span>AHMEDABAD, IN</span>
+        </div>
+    </div>
+</footer>
+
+<script>
+/* =========================================
+   FOOTER COMPONENT JAVASCRIPT
+   ========================================= */
+
+// Initialize footer functionality immediately
+(function() {
+    console.log('🔧 Initializing footer component...');
+    
+    // Wait a bit for DOM to be ready
+    setTimeout(() => {
+        console.log('✅ Setting up footer functionality...');
+        
+        // Time Update Function
+        function updateTime() {
+            const timeEl = document.getElementById('local-time');
+            if (timeEl) {
+                const now = new Date();
+                timeEl.textContent = now.toLocaleTimeString('en-GB', {
+                    hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+                }) + " IST";
+            }
+        }
+
+        // Start time updates
+        setInterval(updateTime, 1000);
+        updateTime();
+        console.log('✅ Time updates started');
+
+        // Reveal Items Animation
+        const revealItems = () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.reveal-item').forEach(item => {
+                observer.observe(item);
+            });
+            console.log('✅ Reveal animations initialized');
+        };
+
+        // Initialize reveal animations
+        revealItems();
+
+        // Touch Device Fixes
+        const isTouchFooter = window.matchMedia("(hover: none)").matches;
+
+        if (isTouchFooter) {
+            // Pause marquee on interaction instead of hover
+            const marquee = document.querySelector(".footer-marquee");
+            const marqueeTrack = document.querySelector(".marquee-track");
+
+            if (marquee && marqueeTrack) {
+                marquee.addEventListener("touchstart", () => {
+                    marqueeTrack.style.animationPlayState = "paused";
+                });
+
+                marquee.addEventListener("touchend", () => {
+                    marqueeTrack.style.animationPlayState = "running";
+                });
+            }
+
+            // Remove hover-based transitions
+            document.querySelectorAll(
+                ".footer-links a, .footer-logo, .map-wrapper"
+            ).forEach(el => {
+                el.style.transition = "none";
+            });
+
+            console.log("📱 Footer mobile optimizations active");
+        }
+
+        console.log('✅ Footer component initialized successfully');
+        
+        // Export for manual access if needed
+        window.FamezelFooter = {
+            updateTime: updateTime,
+            revealItems: revealItems
+        };
+        
+    }, 50); // Small delay to ensure DOM is ready
+})();
+</script>
