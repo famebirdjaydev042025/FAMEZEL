@@ -1,0 +1,383 @@
+<style>
+/* =========================================
+   NAVBAR COMPONENT STYLES
+   ========================================= */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem var(--gutter);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    color: #fff;
+}
+
+.logo {
+    font-family: var(--f-body);
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.menu-text {
+    font-family: var(--f-body);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 24px;
+}
+
+.bar {
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Menu Overlay */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(5, 5, 5, 0.98);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 9990;
+    display: flex;
+    padding: 0 var(--gutter);
+    align-items: center;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.menu-overlay.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.menu-grid {
+    width: 100%;
+    max-width: var(--site-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.menu-link {
+    display: inline-block;
+    font-family: var(--f-header);
+    font-size: clamp(2.5rem, 5vw, 5.5rem);
+    color: #fff;
+    text-decoration: none;
+    line-height: 1.1;
+    transform: translateY(100%);
+    opacity: 0.8;
+}
+
+.menu-link-item {
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.2rem;
+}
+
+.menu-link:hover {
+    opacity: 1;
+    font-style: italic;
+    padding-left: 20px;
+    background: var(--ig-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.menu-number {
+    font-family: var(--f-body);
+    font-size: 0.9rem;
+    color: #999;
+    margin-right: 1.5rem;
+    vertical-align: super;
+    letter-spacing: 0.05em;
+}
+
+.menu-side-info {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    padding-left: 3rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--f-body);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.menu-side-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.menu-side-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.menu-side-link:hover {
+    color: #fff;
+}
+
+.social-row {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.menu-btn.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+
+.menu-btn.active .bar:nth-child(2) {
+    transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* =========================================
+   RESPONSIVE NAVBAR SYSTEM
+   ========================================= */
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .site-header {
+        padding: 1.2rem var(--gutter);
+    }
+    
+    .logo {
+        font-size: 1.1rem;
+    }
+    
+    .menu-overlay {
+        padding: 1.5rem;
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .menu-link {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+    
+    .menu-number {
+        font-size: 0.8rem;
+        margin-right: 1rem;
+    }
+    
+    .menu-side-info {
+        padding-left: 0;
+        border-left: none;
+        margin-top: 2.5rem;
+    }
+    
+    .menu-side-title {
+        font-size: 0.7rem;
+    }
+    
+    .menu-side-link {
+        font-size: 1rem;
+    }
+}
+</style>
+
+<header class="site-header">
+    <a href="index.html" class="logo">FAMEZEL</a>
+    <div class="menu-btn">
+        <span class="menu-text">Menu</span>
+        <div class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+</header>
+
+<div class="menu-overlay">
+    <div class="menu-grid">
+        <div class="menu-links">
+            <div class="menu-link-item"><span class="menu-number">01</span><a href="index.html" class="menu-link">Home</a></div>
+            <div class="menu-link-item"><span class="menu-number">02</span><a href="About.html" class="menu-link">About Us</a></div>
+            <div class="menu-link-item"><span class="menu-number">03</span><a href="Services.html" class="menu-link">Services</a></div>
+            <div class="menu-link-item"><span class="menu-number">04</span><a href="work.html" class="menu-link">Work</a></div>
+            <div class="menu-link-item"><span class="menu-number">05</span><a href="blogs.html" class="menu-link">Blogs</a></div>
+            <div class="menu-link-item"><span class="menu-number">06</span><a href="testimonials.html" class="menu-link">Testimonials</a></div>
+            <div class="menu-link-item"><span class="menu-number">07</span><a href="contact.html" class="menu-link">Contact</a></div>
+        </div>
+        <div class="menu-side-info">
+            <div style="margin-bottom: 2rem;">
+                <p class="menu-side-title">Get in touch</p>
+                <a href="mailto:hello@famezel.com" class="menu-side-link">hello@famezel.com</a>
+            </div>
+            <div>
+                <p class="menu-side-title">Follow</p>
+                <div class="social-row">
+                    <a href="#" class="menu-side-link">LinkedIn</a>
+                    <a href="#" class="menu-side-link">Instagram</a>
+                    <a href="#" class="menu-side-link">X</a>
+                </div>
+            </div>
+            <div style="margin-top: 3rem; font-size: 0.8rem; opacity: 0.4;">
+                Famezel for Freedom ©2026<br>Designing Clarity.
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+/* =========================================
+   NAVBAR COMPONENT JAVASCRIPT
+   ========================================= */
+
+// Initialize navbar functionality immediately
+(function() {
+    console.log('🔧 Initializing navbar component...');
+    
+    // Wait a bit for DOM to be ready
+    setTimeout(() => {
+        // Menu Logic
+        const menuBtn = document.querySelector('.menu-btn');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        const menuLinks = document.querySelectorAll('.menu-link');
+        const menuSide = document.querySelector('.menu-side-info');
+        const menuText = document.querySelector('.menu-text');
+        let isMenuOpen = false;
+
+        if (!menuBtn || !menuOverlay) {
+            console.warn('Navbar elements not found, retrying...');
+            // Retry after a short delay
+            setTimeout(arguments.callee, 100);
+            return;
+        }
+
+        console.log('✅ Navbar elements found, setting up event listeners...');
+
+        menuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            console.log('Menu clicked, isOpen:', isMenuOpen);
+            
+            if (isMenuOpen) {
+                menuOverlay.classList.add('active');
+                menuBtn.classList.add('active');
+                if (menuText) menuText.textContent = "Close";
+                
+                // Use GSAP if available, otherwise fallback to CSS
+                if (window.gsap) {
+                    gsap.to('.menu-btn', { color: '#fff' });
+                    gsap.to('.bar', { backgroundColor: '#fff' });
+                    gsap.to(menuLinks, { y: 0, duration: 0.8, stagger: 0.1, ease: "power3.out", delay: 0.3 });
+                    gsap.to(menuSide, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out", delay: 0.5 });
+                } else {
+                    // Fallback CSS animations
+                    menuLinks.forEach((link, i) => {
+                        setTimeout(() => {
+                            link.style.transform = 'translateY(0)';
+                            link.style.opacity = '1';
+                        }, i * 100 + 300);
+                    });
+                    if (menuSide) {
+                        setTimeout(() => {
+                            menuSide.style.opacity = '1';
+                            menuSide.style.transform = 'translateY(0)';
+                        }, 500);
+                    }
+                }
+            } else {
+                menuOverlay.classList.remove('active');
+                menuBtn.classList.remove('active');
+                if (menuText) menuText.textContent = "Menu";
+
+                // Color Check for Light Section
+                const lightSection = document.querySelector('.light-wrapper');
+                let inLight = false;
+
+                if (lightSection && window.gsap) {
+                    const rect = lightSection.getBoundingClientRect();
+                    // Using scale as trigger: when the aperture is expanded (white background active)
+                    if (rect.top <= 50 && rect.bottom >= 50) {
+                        // Check if the scale animation has progressed enough to fill screen
+                        const scale = gsap.getProperty(lightSection, "scale");
+                        if (scale > 0.8) inLight = true;
+                    }
+                }
+
+                if (window.gsap) {
+                    if (inLight) {
+                        gsap.to(['.menu-btn', '.logo'], { color: '#050505' });
+                        gsap.to('.bar', { backgroundColor: '#050505' });
+                    } else {
+                        gsap.to(['.menu-btn', '.logo'], { color: '#fff' });
+                        gsap.to('.bar', { backgroundColor: '#fff' });
+                    }
+
+                    gsap.to(menuLinks, { y: "100%", duration: 0.5 });
+                    gsap.to(menuSide, { opacity: 0, y: 20 });
+                } else {
+                    // Fallback CSS animations
+                    menuLinks.forEach(link => {
+                        link.style.transform = 'translateY(100%)';
+                        link.style.opacity = '0';
+                    });
+                    if (menuSide) {
+                        menuSide.style.opacity = '0';
+                        menuSide.style.transform = 'translateY(20px)';
+                    }
+                }
+            }
+        });
+
+        // Close menu when clicking on menu links
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMenuOpen) menuBtn.click();
+            });
+        });
+
+        console.log('✅ Navbar component initialized successfully');
+        
+        // Export for manual access if needed
+        window.FamezelNavbar = {
+            isOpen: () => isMenuOpen,
+            toggle: () => menuBtn.click(),
+            close: () => { if (isMenuOpen) menuBtn.click(); }
+        };
+        
+    }, 50); // Small delay to ensure DOM is ready
+})();
+</script>
