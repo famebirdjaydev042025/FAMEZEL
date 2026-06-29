@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflections - FAMEZEL | Voices of Transformation</title>
+    <meta name="description" content="Read reflections from brands that found their clarity through FAMEZEL. Stories of transformation, alignment, and purposeful growth.">
+    <meta name="keywords" content="FAMEZEL testimonials, brand transformation stories, creative agency reflections, client experiences">
+    <meta name="author" content="FAMEZEL">
+    <meta property="og:title" content="Reflections - FAMEZEL | Voices of Transformation">
+    <meta property="og:description" content="Stories of transformation, alignment, and purposeful growth from brands that found their clarity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://famezel.com/testimonials.html">
+    <link rel="canonical" href="https://famezel.com/testimonials.html">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@100;400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    
+    <!-- Unified System -->
+    <script src="common.js" defer></script>
+    
+    <!-- Component System -->
+    <script src="components.js" defer></script>
+
+    <style>
+        /* =========================================
+           PREMIUM EDITORIAL TESTIMONIALS
+           ========================================= */
+        
+        :root {
+            /* FAMEZEL Core Design System */
+            --c-void: #050505;
+            --c-void-depth: #0a0a0a;
+            --c-paper: #F2F2F2;
+            --c-ink: #050505;
+            --c-accent: #ee2a7b;
+            
+            /* The Exact Instagram Creator Gradient */
+            --ig-gradient: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+            --ig-gradient-glow: linear-gradient(45deg, rgba(249, 206, 52, 0.3), rgba(238, 42, 123, 0.3), rgba(98, 40, 215, 0.3));
+            
+            --f-header: 'Cormorant Garamond', serif;
+            --f-body: 'Inter', sans-serif;
+            --f-tech: 'JetBrains Mono', monospace;
+            
+            --ease-cinematic: cubic-bezier(0.19, 1, 0.22, 1);
+            --site-width: 1400px;
+            --gutter: clamp(1.5rem, 5vw, 4rem);
+            --z-header: 10000;
+            --z-cursor: 11000;
+            
+            /* Premium Color Palette */
+            --bg-primary: #0a0a0b;
+            --bg-secondary: #111113;
+            --text-primary: #f8f9fa;
+            --text-secondary: #a8a9aa;
+            --text-muted: #6c6d6e;
+            
+            /* Soft Premium Gradients */
+            --gradient-primary: linear-gradient(135deg, #7dd3fc 0%, #c084fc 35%, #fbbf24 100%);
+            --gradient-secondary: linear-gradient(120deg, #38bdf8 0%, #a855f7 50%, #f59e0b 100%);
+            --gradient-accent: linear-gradient(90deg, #06b6d4 0%, #8b5cf6 50%, #f97316 100%);
+            
+            /* Typography */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-editorial: 'Crimson Text', Georgia, serif;
+            
+            /* Spacing & Layout */
+            --container-max: 1400px;
+            --section-padding: clamp(4rem, 8vw, 8rem);
+            --content-padding: clamp(1.5rem, 4vw, 3rem);
+            
+            /* Effects */
+            --blur-subtle: blur(0.5px);
+            --blur-medium: blur(8px);
+            --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.12);
+            --shadow-floating: 0 16px 64px rgba(0, 0, 0, 0.16);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Ensure navbar compatibility */
+        body {
+            background-color: var(--c-void);
+            color: var(--c-paper);
+            font-family: var(--f-body);
+        }
+
+        /* Subtle Background Texture */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(125, 211, 252, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(192, 132, 252, 0.02) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(251, 191, 36, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Grain Texture - FAMEZEL Style */
+        .grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        /* Container */
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--content-padding);
+        }
+
+        /* =========================================
+           INTRO SECTION
+           ========================================= */
+        
+        .intro-section {
+            padding: var(--section-padding) 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .intro-content {
+            max-width: 800px;
+        }
+
+        .intro-label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .intro-headline {
+            font-family: var(--font-editorial);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 2.5rem;
+            background: var(--gradient-primary);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradientShift 8s ease-in-out infinite;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .intro-text {
+            font-size: 1.125rem;
+            font-weight: 300;
+            color: var(--text-secondary);
+            max-width: 600px;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        /* =========================================
+           TESTIMONIALS SECTION
+           ========================================= */
+        
+        .testimonials-section {
+            padding: var(--section-padding) 0;
+            position: relative;
+        }
+
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: var(--blur-medium);
+            -webkit-backdrop-filter: var(--blur-medium);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 2.5rem;
+            position: relative;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 0;
+            transform: translateY(40px);
+            will-change: transform, opacity;
+            overflow: hidden;
+        }
+
+        /* Asymmetric Grid Layout */
+        .testimonial-card:nth-child(1) { grid-column: 1 / 7; margin-top: 0; }
+        .testimonial-card:nth-child(2) { grid-column: 7 / 13; margin-top: 4rem; }
+        .testimonial-card:nth-child(3) { grid-column: 1 / 8; margin-top: 2rem; }
+        .testimonial-card:nth-child(4) { grid-column: 6 / 13; margin-top: 6rem; }
+        .testimonial-card:nth-child(5) { grid-column: 1 / 6; margin-top: 1rem; }
+        .testimonial-card:nth-child(6) { grid-column: 8 / 13; margin-top: 3rem; }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-accent);
+            border-radius: 16px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-floating);
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .testimonial-card:hover::before {
+            opacity: 0.03;
+        }
+
+        /* =========================================
+           TESTIMONIAL IMAGES
+           ========================================= */
+        
+        .testimonial-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .testimonial-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            filter: grayscale(0.3) contrast(0.9) brightness(0.95);
+        }
+
+        /* Gradient Overlay for Brand Consistency */
+        .testimonial-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(125, 211, 252, 0.15) 0%, 
+                rgba(192, 132, 252, 0.1) 50%, 
+                rgba(251, 191, 36, 0.15) 100%);
+            mix-blend-mode: overlay;
+            opacity: 0.6;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+
+        /* Fallback Gradient Block */
+        .testimonial-image.no-image {
+            background: var(--gradient-primary);
+            opacity: 0.3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-primary);
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Hover Effects */
+        .testimonial-card:hover .testimonial-image {
+            transform: scale(1.05);
+        }
+
+        .testimonial-card:hover .testimonial-image img {
+            filter: grayscale(0.1) contrast(1.05) brightness(1.05);
+        }
+
+        .testimonial-card:hover .testimonial-image::before {
+            opacity: 0.4;
+        }
+
+        /* Loading State */
+        .testimonial-image.loading {
+            background: linear-gradient(90deg, 
+                rgba(255, 255, 255, 0.05) 0%, 
+                rgba(255, 255, 255, 0.1) 50%, 
+                rgba(255, 255, 255, 0.05) 100%);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        /* Image Fade-in Animation */
+        .testimonial-image img {
+            opacity: 0;
+            animation: fadeInImage 0.8s ease-out 0.3s forwards;
+        }
+
+        @keyframes fadeInImage {
+            from { opacity: 0; transform: scale(1.1); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .testimonial-quote {
+            font-family: var(--font-editorial);
+            font-size: 1.25rem;
+            font-weight: 400;
+            line-height: 1.4;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        .testimonial-card:hover .testimonial-quote {
+            color: #ffffff;
+        }
+
+        .testimonial-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .testimonial-name {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .testimonial-role {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+
+        /* =========================================
+           FLOATING ELEMENTS
+           ========================================= */
+        
+        .floating-element {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            bottom: 30%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) scale(1); opacity: 0.3; }
+            50% { transform: translateY(-20px) scale(1.2); opacity: 0.6; }
+        }
+
+        /* =========================================
+           CLIENT SHOWCASE SECTION
+           ========================================= */
+        
+        .client-showcase-section {
+            padding: var(--section-padding) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .showcase-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .showcase-label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .showcase-headline {
+            font-family: var(--font-editorial);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
+            line-height: 1.2;
+            background: var(--gradient-secondary);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradientShift 6s ease-in-out infinite;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .infinite-scroll-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            mask: linear-gradient(90deg, 
+                transparent 0%, 
+                black 10%, 
+                black 90%, 
+                transparent 100%);
+            -webkit-mask: linear-gradient(90deg, 
+                transparent 0%, 
+                black 10%, 
+                black 90%, 
+                transparent 100%);
+        }
+
+        .scroll-track {
+            display: flex;
+            gap: 3rem;
+            width: max-content;
+            margin-bottom: 2rem;
+            animation-duration: 40s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        .scroll-track[data-direction="left"] {
+            animation-name: scrollLeft;
+        }
+
+        .scroll-track[data-direction="right"] {
+            animation-name: scrollRight;
+        }
+
+        @keyframes scrollLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        @keyframes scrollRight {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+
+        .client-item {
+            flex-shrink: 0;
+            opacity: 0.6;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .client-item:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .client-logo {
+            position: relative;
+            width: 200px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: var(--blur-medium);
+            -webkit-backdrop-filter: var(--blur-medium);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .client-logo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-accent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .client-item:hover .client-logo::before {
+            opacity: 0.05;
+        }
+
+        .client-logo img {
+            width: 100%;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 8px;
+            filter: grayscale(0.8) contrast(0.8) brightness(0.9);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            margin-bottom: 0.5rem;
+        }
+
+        .client-item:hover .client-logo img {
+            filter: grayscale(0.2) contrast(1.1) brightness(1.1);
+            transform: scale(1.02);
+        }
+
+        .client-name {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-align: center;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+        }
+
+        .client-item:hover .client-name {
+            color: var(--text-primary);
+        }
+
+        /* Pause animation on hover */
+        .infinite-scroll-container:hover .scroll-track {
+            animation-play-state: paused;
+        }
+
+        /* =========================================
+           RESPONSIVE DESIGN
+           ========================================= */
+        
+        @media (max-width: 1024px) {
+            .testimonials-container {
+                grid-template-columns: repeat(8, 1fr);
+            }
+            
+            .testimonial-card:nth-child(1) { grid-column: 1 / 5; }
+            .testimonial-card:nth-child(2) { grid-column: 5 / 9; margin-top: 2rem; }
+            .testimonial-card:nth-child(3) { grid-column: 1 / 6; margin-top: 1rem; }
+            .testimonial-card:nth-child(4) { grid-column: 4 / 9; margin-top: 3rem; }
+            .testimonial-card:nth-child(5) { grid-column: 1 / 4; margin-top: 0.5rem; }
+            .testimonial-card:nth-child(6) { grid-column: 6 / 9; margin-top: 2rem; }
+
+            .client-logo {
+                width: 180px;
+                height: 110px;
+            }
+
+            .scroll-track {
+                gap: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: clamp(3rem, 6vw, 6rem);
+                --content-padding: 1.5rem;
+            }
+
+            .intro-headline {
+                font-size: clamp(2rem, 8vw, 3rem);
+                margin-bottom: 2rem;
+            }
+
+            .intro-text {
+                font-size: 1rem;
+            }
+
+            .testimonials-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .testimonial-card {
+                grid-column: 1 / -1 !important;
+                margin-top: 0 !important;
+                padding: 2rem;
+            }
+
+            .testimonial-image {
+                width: 60px;
+                height: 60px;
+                border-radius: 8px;
+                margin-bottom: 1rem;
+            }
+
+            .testimonial-quote {
+                font-size: 1.125rem;
+            }
+
+            .showcase-headline {
+                font-size: clamp(1.5rem, 6vw, 2.5rem);
+            }
+
+            .client-logo {
+                width: 160px;
+                height: 100px;
+                padding: 0.8rem;
+            }
+
+            .client-logo img {
+                height: 60px;
+            }
+
+            .client-name {
+                font-size: 0.75rem;
+            }
+
+            .scroll-track {
+                gap: 2rem;
+                animation-duration: 30s;
+            }
+        }
+
+        /* =========================================
+           SCROLL PROGRESS INDICATOR
+           ========================================= */
+        
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: var(--ig-gradient);
+            z-index: var(--z-header);
+            transition: width 0.1s ease;
+        }
+
+        /* =========================================
+           REVEAL ANIMATIONS
+           ========================================= */
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grain"></div>
+    <div class="scroll-progress"></div>
+
+    <!-- Floating Elements -->
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+
+    <!-- INTRO SECTION -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-label">reflections</div>
+                <h1 class="intro-headline">Voices of transformation</h1>
+                <p class="intro-text">
+                    These are not reviews—they are reflections. Stories from brands that found their clarity, 
+                    discovered their purpose, and learned that true growth comes not from chasing trends, 
+                    but from alignment with who they truly are.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="testimonials-container">
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-image">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=200&h=200&fit=crop&crop=face&auto=format&q=80" 
+                             alt="Sarah Chen" 
+                             loading="lazy"
+                             onerror="this.parentElement.classList.add('no-image'); this.style.display='none';">
+                    </div>
+                    <div class="testimonial-quote">
+                        "Working with FAMEZEL felt less like marketing and more like finding direction. 
+                        They helped us remember who we are."
+                    </div>
+                    <div class="testimonial-meta">
+                        <div class="testimonial-name">Sarah Chen</div>
+                        <div class="testimonial-role">Founder, Lumina Studios</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-image">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face&auto=format&q=80" 
+                             alt="Marcus Rodriguez" 
+                             loading="lazy"
+                             onerror="this.parentElement.classList.add('no-image'); this.style.display='none';">
+                    </div>
+                    <div class="testimonial-quote">
+                        "They don't chase trends—they create clarity. Our rebrand wasn't just visual; 
+                        it was philosophical."
+                    </div>
+                    <div class="testimonial-meta">
+                        <div class="testimonial-name">Marcus Rodriguez</div>
+                        <div class="testimonial-role">CEO, Vertex Technologies</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-image">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face&auto=format&q=80" 
+                             alt="Elena Petrov" 
+                             loading="lazy"
+                             onerror="this.parentElement.classList.add('no-image'); this.style.display='none';">
+                    </div>
+                    <div class="testimonial-quote">
+                        "Before FAMEZEL, we were shouting into the void. Now, our customers find us. 
+                        The difference is alignment."
+                    </div>
+                    <div class="testimonial-meta">
+                        <div class="testimonial-name">Elena Petrov</div>
+                        <div class="testimonial-role">Creative Director, Bloom Collective</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face&auto=format&q=80" 
+                             alt="David Kim" 
+                             loading="lazy"
+                             onerror="this.parentElement.classList.add('no-image'); this.style.display='none';">
+                    </div>
+                    <div class="testimonial-quote">
+                        "They understood our vision before we did. FAMEZEL doesn't just deliver projects—
+                        they deliver transformation."
+                    </div>
+                    <div class="testimonial-meta">
+                        <div class="testimonial-name">David Kim</div>
+                        <div class="testimonial-role">Founder, Nexus Innovations</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-image">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop&crop=face&auto=format&q=80" 
+                             alt="Aria Nakamura" 
+                             loading="lazy"
+                             onerror="this.parentElement.classList.add('no-image'); this.style.display='none';">
+                    </div>
+                    <div class="testimonial-quote">
+                        "Working with them was like turning on the lights. Suddenly, everything made sense—
+                        our message, our purpose."
+                    </div>
+                    <div class="testimonial-meta">
+                        <div class="testimonial-name">Aria Nakamura</div>
+                        <div class="testimonial-role">Co-founder, Zenith Wellness</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-image">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face&auto=format&q=80" 
+                             alt="Jordan Mitchell" 
+                             loading="lazy"
+                             onerror="this.parentElement.classList.add('no-image'); this.style.display='none';">
+                    </div>
+                    <div class="testimonial-quote">
+                        "FAMEZEL doesn't just create brands—they create movements. 
+                        That's the power of true alignment."
+                    </div>
+                    <div class="testimonial-meta">
+                        <div class="testimonial-name">Jordan Mitchell</div>
+                        <div class="testimonial-role">Founder, Impact Collective</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CLIENT SHOWCASE SECTION -->
+    <section class="client-showcase-section">
+        <div class="container">
+            <div class="showcase-intro">
+                <div class="showcase-label">trusted by</div>
+                <h2 class="showcase-headline">Brands that chose clarity</h2>
+            </div>
+        </div>
+        
+        <div class="infinite-scroll-container">
+            <div class="scroll-track" data-direction="left">
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Lumina Studios" loading="lazy">
+                        <div class="client-name">Lumina Studios</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Vertex Technologies" loading="lazy">
+                        <div class="client-name">Vertex Technologies</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Bloom Collective" loading="lazy">
+                        <div class="client-name">Bloom Collective</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Nexus Innovations" loading="lazy">
+                        <div class="client-name">Nexus Innovations</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1486312338219-ce68e2c6b696?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Zenith Wellness" loading="lazy">
+                        <div class="client-name">Zenith Wellness</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Impact Collective" loading="lazy">
+                        <div class="client-name">Impact Collective</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Stellar Dynamics" loading="lazy">
+                        <div class="client-name">Stellar Dynamics</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Prism Creative" loading="lazy">
+                        <div class="client-name">Prism Creative</div>
+                    </div>
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Lumina Studios" loading="lazy">
+                        <div class="client-name">Lumina Studios</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Vertex Technologies" loading="lazy">
+                        <div class="client-name">Vertex Technologies</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Bloom Collective" loading="lazy">
+                        <div class="client-name">Bloom Collective</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Nexus Innovations" loading="lazy">
+                        <div class="client-name">Nexus Innovations</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1486312338219-ce68e2c6b696?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Zenith Wellness" loading="lazy">
+                        <div class="client-name">Zenith Wellness</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Impact Collective" loading="lazy">
+                        <div class="client-name">Impact Collective</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Stellar Dynamics" loading="lazy">
+                        <div class="client-name">Stellar Dynamics</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Prism Creative" loading="lazy">
+                        <div class="client-name">Prism Creative</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-track" data-direction="right">
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1553484771-371a605b060b?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Aurora Labs" loading="lazy">
+                        <div class="client-name">Aurora Labs</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Quantum Studios" loading="lazy">
+                        <div class="client-name">Quantum Studios</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Meridian Group" loading="lazy">
+                        <div class="client-name">Meridian Group</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1560472355-536de3962603?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Catalyst Ventures" loading="lazy">
+                        <div class="client-name">Catalyst Ventures</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Elevate Digital" loading="lazy">
+                        <div class="client-name">Elevate Digital</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Infinity Design" loading="lazy">
+                        <div class="client-name">Infinity Design</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1553484771-cc0d9b8c2b33?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Nexus Creative" loading="lazy">
+                        <div class="client-name">Nexus Creative</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Vortex Media" loading="lazy">
+                        <div class="client-name">Vortex Media</div>
+                    </div>
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1553484771-371a605b060b?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Aurora Labs" loading="lazy">
+                        <div class="client-name">Aurora Labs</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Quantum Studios" loading="lazy">
+                        <div class="client-name">Quantum Studios</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Meridian Group" loading="lazy">
+                        <div class="client-name">Meridian Group</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1560472355-536de3962603?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Catalyst Ventures" loading="lazy">
+                        <div class="client-name">Catalyst Ventures</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Elevate Digital" loading="lazy">
+                        <div class="client-name">Elevate Digital</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Infinity Design" loading="lazy">
+                        <div class="client-name">Infinity Design</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1553484771-cc0d9b8c2b33?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Nexus Creative" loading="lazy">
+                        <div class="client-name">Nexus Creative</div>
+                    </div>
+                </div>
+                <div class="client-item">
+                    <div class="client-logo">
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=200&h=100&fit=crop&auto=format&q=80" 
+                             alt="Vortex Media" loading="lazy">
+                        <div class="client-name">Vortex Media</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // =========================================
+        // PREMIUM TESTIMONIALS INTERACTIONS
+        // =========================================
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize GSAP
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Initialize Lenis for smooth scrolling
+            const lenis = new Lenis({
+                duration: 1.6,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                smooth: true
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+
+            // GSAP + Lenis integration
+            lenis.on('scroll', ScrollTrigger.update);
+            gsap.ticker.add((time) => {
+                lenis.raf(time * 1000);
+            });
+            gsap.ticker.lagSmoothing(0);
+
+            // =========================================
+            // INTRO ANIMATIONS
+            // =========================================
+            
+            const tl = gsap.timeline({ delay: 0.5 });
+            
+            tl.to('.intro-label', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power2.out"
+            })
+            .to('.intro-headline', {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: "power2.out"
+            }, "-=0.4")
+            .to('.intro-text', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power2.out"
+            }, "-=0.6");
+
+            // =========================================
+            // TESTIMONIAL CARDS ANIMATION
+            // =========================================
+            
+            const cards = document.querySelectorAll('.testimonial-card');
+            
+            cards.forEach((card, index) => {
+                gsap.to(card, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 85%",
+                        toggleActions: "play none none reverse"
+                    }
+                });
+
+                // Subtle parallax effect
+                gsap.to(card, {
+                    y: -20,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: 1
+                    }
+                });
+            });
+
+            // =========================================
+            // IMAGE LOADING ENHANCEMENT
+            // =========================================
+            
+            const testimonialImages = document.querySelectorAll('.testimonial-image');
+            
+            testimonialImages.forEach((imageContainer, index) => {
+                const img = imageContainer.querySelector('img');
+                
+                if (img) {
+                    // Add loading state
+                    imageContainer.classList.add('loading');
+                    
+                    // Handle successful image load
+                    img.addEventListener('load', () => {
+                        imageContainer.classList.remove('loading');
+                        
+                        // Staggered fade-in animation
+                        gsap.fromTo(img, 
+                            { opacity: 0, scale: 1.1 },
+                            { 
+                                opacity: 1, 
+                                scale: 1, 
+                                duration: 0.8, 
+                                delay: index * 0.1,
+                                ease: "power2.out" 
+                            }
+                        );
+                    });
+                    
+                    // Handle image error
+                    img.addEventListener('error', () => {
+                        imageContainer.classList.remove('loading');
+                        imageContainer.classList.add('no-image');
+                        imageContainer.innerHTML = `<span>${img.alt.split(' ').map(n => n[0]).join('')}</span>`;
+                    });
+                }
+            });
+
+            // =========================================
+            // SCROLL PROGRESS
+            // =========================================
+            
+            gsap.to('.scroll-progress', {
+                width: '100%',
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "body",
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 0.3
+                }
+            });
+
+            // =========================================
+            // GRADIENT HOVER EFFECTS
+            // =========================================
+            
+            cards.forEach(card => {
+                const quote = card.querySelector('.testimonial-quote');
+                const image = card.querySelector('.testimonial-image');
+                const img = card.querySelector('.testimonial-image img');
+                
+                card.addEventListener('mouseenter', () => {
+                    gsap.to(card, {
+                        scale: 1.02,
+                        duration: 0.4,
+                        ease: "power2.out"
+                    });
+                    
+                    gsap.to(quote, {
+                        color: '#ffffff',
+                        duration: 0.3,
+                        ease: "power2.out"
+                    });
+
+                    // Image hover effects
+                    if (image) {
+                        gsap.to(image, {
+                            scale: 1.05,
+                            duration: 0.4,
+                            ease: "power2.out"
+                        });
+                    }
+
+                    if (img) {
+                        gsap.to(img, {
+                            filter: 'grayscale(0.1) contrast(1.05) brightness(1.05)',
+                            duration: 0.4,
+                            ease: "power2.out"
+                        });
+                    }
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, {
+                        scale: 1,
+                        duration: 0.4,
+                        ease: "power2.out"
+                    });
+                    
+                    gsap.to(quote, {
+                        color: 'var(--text-primary)',
+                        duration: 0.3,
+                        ease: "power2.out"
+                    });
+
+                    // Reset image effects
+                    if (image) {
+                        gsap.to(image, {
+                            scale: 1,
+                            duration: 0.4,
+                            ease: "power2.out"
+                        });
+                    }
+
+                    if (img) {
+                        gsap.to(img, {
+                            filter: 'grayscale(0.3) contrast(0.9) brightness(0.95)',
+                            duration: 0.4,
+                            ease: "power2.out"
+                        });
+                    }
+                });
+            });
+
+            // =========================================
+            // FLOATING ELEMENTS PARALLAX
+            // =========================================
+            
+            const floatingElements = document.querySelectorAll('.floating-element');
+            
+            floatingElements.forEach((element, index) => {
+                gsap.to(element, {
+                    y: -50 * (index + 1),
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: "body",
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: 1
+                    }
+                });
+            });
+
+            // =========================================
+            // CLIENT SHOWCASE ANIMATIONS
+            // =========================================
+            
+            // Animate showcase intro
+            gsap.to('.showcase-label', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: '.client-showcase-section',
+                    start: "top 80%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+
+            gsap.to('.showcase-headline', {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: '.client-showcase-section',
+                    start: "top 75%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+
+            // Staggered client items reveal
+            const clientItems = document.querySelectorAll('.client-item');
+            
+            gsap.fromTo(clientItems, 
+                { opacity: 0, y: 30 },
+                {
+                    opacity: 0.6,
+                    y: 0,
+                    duration: 0.8,
+                    stagger: 0.05,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: '.infinite-scroll-container',
+                        start: "top 85%",
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+
+            // Enhanced hover effects for client items
+            clientItems.forEach(item => {
+                const logo = item.querySelector('.client-logo');
+                const img = item.querySelector('.client-logo img');
+                const name = item.querySelector('.client-name');
+                
+                item.addEventListener('mouseenter', () => {
+                    gsap.to(item, {
+                        opacity: 1,
+                        scale: 1.05,
+                        duration: 0.4,
+                        ease: "power2.out"
+                    });
+                    
+                    gsap.to(logo, {
+                        borderColor: 'rgba(255, 255, 255, 0.12)',
+                        duration: 0.3,
+                        ease: "power2.out"
+                    });
+
+                    if (img) {
+                        gsap.to(img, {
+                            filter: 'grayscale(0.2) contrast(1.1) brightness(1.1)',
+                            scale: 1.02,
+                            duration: 0.4,
+                            ease: "power2.out"
+                        });
+                    }
+
+                    if (name) {
+                        gsap.to(name, {
+                            color: 'var(--text-primary)',
+                            duration: 0.3,
+                            ease: "power2.out"
+                        });
+                    }
+                });
+
+                item.addEventListener('mouseleave', () => {
+                    gsap.to(item, {
+                        opacity: 0.6,
+                        scale: 1,
+                        duration: 0.4,
+                        ease: "power2.out"
+                    });
+                    
+                    gsap.to(logo, {
+                        borderColor: 'rgba(255, 255, 255, 0.06)',
+                        duration: 0.3,
+                        ease: "power2.out"
+                    });
+
+                    if (img) {
+                        gsap.to(img, {
+                            filter: 'grayscale(0.8) contrast(0.8) brightness(0.9)',
+                            scale: 1,
+                            duration: 0.4,
+                            ease: "power2.out"
+                        });
+                    }
+
+                    if (name) {
+                        gsap.to(name, {
+                            color: 'var(--text-secondary)',
+                            duration: 0.3,
+                            ease: "power2.out"
+                        });
+                    }
+                });
+            });
+
+            console.log('✨ Premium testimonials page initialized');
+        });
+    </script>
+</body>
+</html>
